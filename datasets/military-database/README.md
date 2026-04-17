@@ -4,6 +4,15 @@
 
 本資料庫收集 **美國 (United States)** 與 **第一島鏈盟友** — 日本 (Japan)、韓國 (South Korea)、台灣 (Taiwan/ROC)、菲律賓 (Philippines)、**澳洲 (Australia, AUKUS)** — 的主要軍事基地與各軍種武器系統資訊。另收錄 **中華人民共和國 (PRC/PLA)** 與 **北韓 (DPRK/KPA)** 作為對峙參考。
 
+## 🌐 互動式儀表板（手機友善）
+
+👉 **[開啟互動式儀表板 →](../../docs/military-dashboard/)**
+
+部署後公開網址（啟用 GitHub Pages 後）：
+`https://<your-username>.github.io/hermes-agent/military-dashboard/`
+
+儀表板特色：📊 概覽統計、🗺️ 互動地圖、⚖️ 戰力比較、🏛️🚀 搜尋過濾、🌗 明暗主題、📱 響應式（手機最佳化）。
+
 所有資料均以 **專業智庫、專業軍事資料庫、專書與參考書／教科書** 為主要來源。完整書目請見 [`SOURCES.md`](SOURCES.md)。核心來源類別：
 
 - **專業軍事資料庫**：IISS *The Military Balance*（年度）、*Jane's Fighting Ships* / *Jane's All the World's Aircraft* / *Jane's Sentinel*、SIPRI Arms Transfers Database
