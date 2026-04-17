@@ -2,7 +2,7 @@
 
 ## 概述
 
-本資料庫收集 **美國 (United States)** 與 **第一島鏈盟友** — 日本 (Japan)、韓國 (South Korea)、台灣 (Taiwan/ROC)、菲律賓 (Philippines) — 的主要軍事基地與各軍種武器系統資訊。另收錄 **中華人民共和國 (PRC/PLA)** 作為對峙參考。
+本資料庫收集 **美國 (United States)** 與 **第一島鏈盟友** — 日本 (Japan)、韓國 (South Korea)、台灣 (Taiwan/ROC)、菲律賓 (Philippines)、**澳洲 (Australia, AUKUS)** — 的主要軍事基地與各軍種武器系統資訊。另收錄 **中華人民共和國 (PRC/PLA)** 與 **北韓 (DPRK/KPA)** 作為對峙參考。
 
 所有資料均以 **專業智庫、專業軍事資料庫、專書與參考書／教科書** 為主要來源。完整書目請見 [`SOURCES.md`](SOURCES.md)。核心來源類別：
 
@@ -19,15 +19,17 @@
 
 ## 資料規模
 
-| 國家 | 基地數 | 武器系統數 |
-|---|---:|---:|
-| US (美國 INDOPACOM) | 28 | 52 |
-| JP (日本) | 20 | 36 |
-| KR (韓國) | 20 | 40 |
-| TW (台灣) | 22 | 38 |
-| PH (菲律賓) | 16 | 25 |
-| CN (中國 PLA，對峙參考) | 28 | 57 |
-| **合計** | **134** | **248** |
+| 國家 | 陣營 | 基地數 | 武器系統數 |
+|---|---|---:|---:|
+| US (美國 INDOPACOM) | 盟友 | 28 | 52 |
+| JP (日本 JSDF) | 盟友 | 20 | 36 |
+| KR (韓國 ROK) | 盟友 | 20 | 40 |
+| TW (台灣 ROC) | 盟友 | 22 | 38 |
+| PH (菲律賓 AFP) | 盟友 | 16 | 25 |
+| AU (澳洲 ADF/AUKUS) | 盟友 | 16 | 27 |
+| CN (中國 PLA) | 對峙 | 28 | 57 |
+| KP (北韓 KPA) | 對峙 | 15 | 33 |
+| **合計** | | **165** | **308** |
 
 ---
 
@@ -44,15 +46,19 @@ datasets/military-database/
 │   ├── south_korea.json
 │   ├── taiwan.json
 │   ├── philippines.json
-│   └── china.json
+│   ├── australia.json
+│   ├── china.json
+│   └── north_korea.json
 ├── weapons/                   # 武器系統資料（依國家分檔）
 │   └── {同上}.json
 ├── scripts/
 │   ├── build_db.py            # 讀取 JSON → 產生 SQLite DB
 │   ├── query_examples.py      # 範例查詢
 │   ├── to_csv.py              # 匯出 CSV (bases.csv / weapons.csv)
-│   └── validate.py            # 資料完整性與 enum 驗證
-└── csv/                       # (export_csv.py 產出)
+│   ├── validate.py            # 資料完整性與 enum 驗證
+│   ├── force_comparison.py    # 盟友 vs 對峙方戰力比較分析
+│   └── generate_map.py        # 互動式地圖 (folium HTML / matplotlib PNG)
+└── csv/                       # (to_csv.py 產出)
 ```
 
 ---
@@ -112,6 +118,12 @@ python3 scripts/query_examples.py
 
 # 匯出 CSV（給 Excel/Pandas/BI 工具）
 python3 scripts/to_csv.py                    # → csv/bases.csv, csv/weapons.csv
+
+# 盟友 vs 對峙方戰力比較分析（10 項指標）
+python3 scripts/force_comparison.py
+
+# 互動式地圖（需 pip install folium）
+python3 scripts/generate_map.py              # → map.html
 ```
 
 ### SQL 範例
@@ -123,7 +135,7 @@ WHERE country='US' AND location LIKE '%Okinawa%';
 
 -- 第一島鏈上所有射程 >1000 km 的打擊系統
 SELECT country, name, category, range_km FROM weapons
-WHERE range_km > 1000 AND country IN ('US','JP','KR','TW','PH')
+WHERE range_km > 1000 AND country IN ('US','JP','KR','TW','PH','AU')
 ORDER BY range_km DESC;
 
 -- 中方 PLARF 對台飛彈兵力
@@ -142,5 +154,6 @@ WHERE category='Destroyer' AND (notes LIKE '%Aegis%' OR name LIKE '%Aegis%'
 
 ## 版本
 
-- **v0.2.0** (2026-04-15)：加入 PRC/PLA 作為對峙參考；134 基地 / 248 武器。新增 CSV 匯出與資料驗證。
+- **v0.3.0** (2026-04-17)：加入澳洲 (AUKUS) 與北韓 (DPRK)；165 基地 / 308 武器 / 8 國。新增 `force_comparison.py` (10 項戰力比較分析) 與 `generate_map.py` (互動式地圖)。
+- v0.2.0：加入 PRC/PLA 作為對峙參考；134 基地 / 248 武器。新增 CSV 匯出與資料驗證。
 - v0.1.0：初版，涵蓋 US + JP/KR/TW/PH。

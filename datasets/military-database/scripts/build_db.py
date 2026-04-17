@@ -23,6 +23,8 @@ COUNTRIES = [
     ("TW", "Taiwan", "中華民國"),
     ("PH", "Philippines", "Republika ng Pilipinas"),
     ("CN", "People's Republic of China", "中华人民共和国"),
+    ("AU", "Australia", "Australia"),
+    ("KP", "Democratic People's Republic of Korea", "조선민주주의인민공화국"),
 ]
 
 

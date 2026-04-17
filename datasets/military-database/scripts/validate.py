@@ -10,7 +10,7 @@ ROOT = Path(__file__).resolve().parent.parent
 BASES_DIR = ROOT / "bases"
 WEAPONS_DIR = ROOT / "weapons"
 
-COUNTRIES = {"US", "JP", "KR", "TW", "PH", "CN"}
+COUNTRIES = {"US", "JP", "KR", "TW", "PH", "CN", "AU", "KP"}
 BRANCHES = {
     "Army", "Navy", "Air Force", "Marines", "Space", "Coast Guard",
     "Rocket Force", "Aerospace", "Cyber", "Joint",
