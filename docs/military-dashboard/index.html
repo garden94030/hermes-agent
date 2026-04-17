@@ -1,0 +1,249 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0">
+<meta name="theme-color" content="#0b1120">
+<meta name="description" content="第一島鏈軍事資料庫互動式儀表板 — 美國、日韓台菲澳與中朝軍事部署、武器系統公開資料視覺化">
+<title>第一島鏈軍事資料庫 | First Island Chain Military Database</title>
+
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Ctext y='.9em' font-size='90'%3E🛡️%3C/text%3E%3C/svg%3E">
+
+<link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css"
+      integrity="sha256-p4NxAoJBhIIN+hmNHrzRCf9tD/miZyoHS5obTRR9BMY=" crossorigin="">
+<link rel="stylesheet" href="css/styles.css?v=4">
+</head>
+<body>
+
+<header class="app-header">
+  <div class="wrap">
+    <div class="brand">
+      <span class="logo">🛡️</span>
+      <div>
+        <h1>第一島鏈軍事資料庫</h1>
+        <p class="subtitle">First Island Chain Military Database</p>
+      </div>
+    </div>
+    <div class="header-actions">
+      <button id="theme-toggle" class="icon-btn" title="Toggle theme" aria-label="切換主題">
+        <span class="theme-icon">🌙</span>
+      </button>
+    </div>
+  </div>
+</header>
+
+<nav class="tabs">
+  <div class="wrap">
+    <button class="tab active" data-tab="overview">📊 概覽</button>
+    <button class="tab" data-tab="map">🗺️ 地圖</button>
+    <button class="tab" data-tab="compare">⚖️ 戰力比較</button>
+    <button class="tab" data-tab="bases">🏛️ 基地</button>
+    <button class="tab" data-tab="weapons">🚀 武器</button>
+    <button class="tab" data-tab="sources">📚 來源</button>
+  </div>
+</nav>
+
+<main>
+
+  <!-- OVERVIEW -->
+  <section id="tab-overview" class="tab-panel active">
+    <div class="wrap">
+      <div class="stats-grid">
+        <div class="stat-card"><div class="stat-label">國家</div><div class="stat-value" id="stat-countries">—</div></div>
+        <div class="stat-card"><div class="stat-label">軍事基地</div><div class="stat-value" id="stat-bases">—</div></div>
+        <div class="stat-card"><div class="stat-label">武器系統</div><div class="stat-value" id="stat-weapons">—</div></div>
+        <div class="stat-card"><div class="stat-label">軍種別</div><div class="stat-value" id="stat-branches">—</div></div>
+      </div>
+
+      <h2 class="section-title">各國兵力部署</h2>
+      <div class="countries-grid" id="countries-grid"></div>
+
+      <div class="chart-row">
+        <div class="chart-card">
+          <h3>基地數（依國家／軍種）</h3>
+          <canvas id="chart-bases-country"></canvas>
+        </div>
+        <div class="chart-card">
+          <h3>武器系統（依類別）</h3>
+          <canvas id="chart-weapons-category"></canvas>
+        </div>
+      </div>
+
+      <div class="chart-row">
+        <div class="chart-card full">
+          <h3>飛彈/打擊系統射程分布（km）</h3>
+          <canvas id="chart-missile-range"></canvas>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- MAP -->
+  <section id="tab-map" class="tab-panel">
+    <div class="wrap">
+      <h2 class="section-title">互動式基地地圖</h2>
+      <div class="filter-bar">
+        <div class="chip-group" id="map-country-filter"></div>
+      </div>
+      <div id="map"></div>
+      <p class="hint">點擊標記查看基地詳細資料。使用上方按鈕切換國家顯示。</p>
+    </div>
+  </section>
+
+  <!-- COMPARE -->
+  <section id="tab-compare" class="tab-panel">
+    <div class="wrap">
+      <h2 class="section-title">盟友 vs 對峙方戰力比較</h2>
+
+      <div class="compare-summary" id="compare-summary"></div>
+
+      <div class="chart-row">
+        <div class="chart-card"><h3>戰鬥機（服役數）</h3><canvas id="chart-cmp-fighters"></canvas></div>
+        <div class="chart-card"><h3>主要水面艦艇</h3><canvas id="chart-cmp-surface"></canvas></div>
+      </div>
+
+      <div class="chart-row">
+        <div class="chart-card"><h3>潛艦兵力</h3><canvas id="chart-cmp-subs"></canvas></div>
+        <div class="chart-card"><h3>五代機數量</h3><canvas id="chart-cmp-5gen"></canvas></div>
+      </div>
+
+      <div class="chart-row">
+        <div class="chart-card full">
+          <h3>長程打擊系統（射程 &gt; 300 km）</h3>
+          <canvas id="chart-cmp-longrange"></canvas>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- BASES -->
+  <section id="tab-bases" class="tab-panel">
+    <div class="wrap">
+      <h2 class="section-title">軍事基地清單</h2>
+      <div class="filter-bar">
+        <input type="search" id="bases-search" placeholder="🔍 搜尋基地／地點／單位…" autocomplete="off">
+        <select id="bases-country-select">
+          <option value="">全部國家</option>
+        </select>
+        <select id="bases-branch-select">
+          <option value="">全部軍種</option>
+        </select>
+      </div>
+      <div class="result-count" id="bases-count"></div>
+      <div class="table-wrapper">
+        <table id="bases-table">
+          <thead>
+            <tr><th>國家</th><th>基地名稱</th><th>軍種</th><th>類型</th><th>地點</th><th>角色</th></tr>
+          </thead>
+          <tbody></tbody>
+        </table>
+      </div>
+    </div>
+  </section>
+
+  <!-- WEAPONS -->
+  <section id="tab-weapons" class="tab-panel">
+    <div class="wrap">
+      <h2 class="section-title">武器系統清單</h2>
+      <div class="filter-bar">
+        <input type="search" id="weapons-search" placeholder="🔍 搜尋型號／角色…" autocomplete="off">
+        <select id="weapons-country-select">
+          <option value="">全部國家</option>
+        </select>
+        <select id="weapons-category-select">
+          <option value="">全部類別</option>
+        </select>
+        <select id="weapons-branch-select">
+          <option value="">全部軍種</option>
+        </select>
+      </div>
+      <div class="result-count" id="weapons-count"></div>
+      <div class="table-wrapper">
+        <table id="weapons-table">
+          <thead>
+            <tr><th>國家</th><th>型號</th><th>類別</th><th>軍種</th><th>數量</th><th>狀態</th><th>射程(km)</th><th>備註</th></tr>
+          </thead>
+          <tbody></tbody>
+        </table>
+      </div>
+    </div>
+  </section>
+
+  <!-- SOURCES -->
+  <section id="tab-sources" class="tab-panel">
+    <div class="wrap">
+      <h2 class="section-title">資料來源</h2>
+      <p class="lead">本資料庫以 <strong>專業智庫、專業軍事資料庫、專書與參考書／教科書</strong> 為主要來源。所有資料均為公開 OSINT。</p>
+
+      <div class="sources-grid">
+        <div class="source-card">
+          <h3>📗 專業軍事資料庫</h3>
+          <ul>
+            <li><strong>IISS</strong> <em>The Military Balance</em>（年度）</li>
+            <li><strong>Jane's</strong> <em>Fighting Ships</em>, <em>All the World's Aircraft</em>, <em>Sentinel</em></li>
+            <li><strong>SIPRI</strong> Arms Transfers Database</li>
+            <li>Military Periscope, GlobalSecurity.org</li>
+            <li>FAS / NTI (核武資料)</li>
+          </ul>
+        </div>
+        <div class="source-card">
+          <h3>🏛️ 專業智庫</h3>
+          <ul>
+            <li><strong>CSIS</strong>（China Power Project, AMTI, Beyond Parallel）</li>
+            <li><strong>RAND Corporation</strong></li>
+            <li><strong>NIDS</strong>（日本防衛研究所）</li>
+            <li><strong>INDSR</strong>（國防安全研究院，台灣）</li>
+            <li><strong>ASPI</strong>（Australian Strategic Policy Institute）</li>
+            <li>CNAS, Hudson, Heritage, Brookings, Atlantic Council</li>
+          </ul>
+        </div>
+        <div class="source-card">
+          <h3>📜 官方國防文件</h3>
+          <ul>
+            <li>美國 DoD《中國軍力報告》（年度）、CRS 報告</li>
+            <li>日本《防衛白書 / Defense of Japan》</li>
+            <li>韓國《國防白皮書》</li>
+            <li>ROC《國防報告書》、《QDR》</li>
+            <li>菲律賓 AFP Modernization Program</li>
+          </ul>
+        </div>
+        <div class="source-card">
+          <h3>📚 專書／參考書</h3>
+          <ul>
+            <li>Polmar, <em>The Naval Institute Guide to the Ships and Aircraft of the U.S. Fleet</em></li>
+            <li>Wertheim, <em>Combat Fleets of the World</em></li>
+            <li>Yoshihara &amp; Holmes, <em>Red Star over the Pacific</em></li>
+            <li>Friedberg, <em>A Contest for Supremacy</em></li>
+            <li>Easton, <em>The Chinese Invasion Threat</em></li>
+            <li>Erickson (ed.), <em>Chinese Naval Shipbuilding</em></li>
+            <li>Osprey <em>New Vanguard / Weapon</em> 系列</li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="disclaimer">
+        <h3>⚠️ 免責聲明</h3>
+        <p>本資料為公開 OSINT 彙整，僅供學術研究、戰略分析、政策研究、新聞報導與地緣政治教學之用途。資料可能隨時間變動；精確度以官方來源為準。<strong>不包含任何機密、作戰部署或即時情報</strong>。數量為公開估計值，不反映前沿部署實況。</p>
+      </div>
+    </div>
+  </section>
+
+</main>
+
+<footer class="app-footer">
+  <div class="wrap">
+    <p>v<span id="footer-version">0.4.0</span> · 資料生成：<span id="footer-generated">—</span></p>
+    <p>Source: <a href="https://github.com/garden94030/hermes-agent/tree/main/datasets/military-database" target="_blank" rel="noopener">GitHub</a> · 公開 OSINT 資料</p>
+  </div>
+</footer>
+
+<div id="base-modal" class="modal hidden">
+  <div class="modal-body"><button class="modal-close" aria-label="關閉">✕</button><div class="modal-content"></div></div>
+</div>
+
+<script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"
+        integrity="sha256-20nQCchB9co0qIjJZRGuk2/Z9VM+kNiyxNV1lvTlZBo=" crossorigin=""></script>
+<script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.1/dist/chart.umd.min.js"></script>
+<script src="js/app.js?v=4"></script>
+</body>
+</html>
