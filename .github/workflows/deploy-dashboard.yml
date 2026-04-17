@@ -1,0 +1,73 @@
+name: Deploy Military Dashboard to Pages
+
+on:
+  push:
+    branches: [main]
+    paths:
+      - 'docs/military-dashboard/**'
+      - 'datasets/military-database/bases/**.json'
+      - 'datasets/military-database/weapons/**.json'
+      - 'datasets/military-database/scripts/build_dashboard_data.py'
+      - '.github/workflows/deploy-dashboard.yml'
+  workflow_dispatch:
+
+permissions:
+  contents: read
+  pages: write
+  id-token: write
+
+concurrency:
+  group: pages-dashboard
+  cancel-in-progress: false
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+
+      - name: Rebuild dashboard data.json
+        run: |
+          python3 datasets/military-database/scripts/build_dashboard_data.py
+
+      - name: Validate dataset
+        run: |
+          python3 datasets/military-database/scripts/validate.py
+
+      - name: Prepare site directory
+        run: |
+          mkdir -p _site
+          cp -r docs/military-dashboard/. _site/
+          # Provide a friendly root index that redirects to the dashboard
+          cat > _site/../_site_root.html <<'HTML'
+          <!DOCTYPE html><html><head><meta charset="utf-8">
+          <meta http-equiv="refresh" content="0; url=./">
+          <title>First Island Chain Military Dashboard</title>
+          </head><body>Redirecting…</body></html>
+          HTML
+          ls -la _site/
+
+      - name: Setup Pages
+        uses: actions/configure-pages@v5
+        with:
+          enablement: true
+
+      - name: Upload artifact
+        uses: actions/upload-pages-artifact@v3
+        with:
+          path: _site
+
+  deploy:
+    needs: build
+    runs-on: ubuntu-latest
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    steps:
+      - name: Deploy to GitHub Pages
+        id: deployment
+        uses: actions/deploy-pages@v4
