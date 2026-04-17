@@ -2,14 +2,14 @@
 
 ## 概述
 
-本資料庫收集 **美國 (United States)** 與 **第一島鏈盟友** — 日本 (Japan)、韓國 (South Korea)、台灣 (Taiwan/ROC)、菲律賓 (Philippines) — 的主要軍事基地與各軍種武器系統資訊。
+本資料庫收集 **美國 (United States)** 與 **第一島鏈盟友** — 日本 (Japan)、韓國 (South Korea)、台灣 (Taiwan/ROC)、菲律賓 (Philippines) — 的主要軍事基地與各軍種武器系統資訊。另收錄 **中華人民共和國 (PRC/PLA)** 作為對峙參考。
 
 所有資料均以 **專業智庫、專業軍事資料庫、專書與參考書／教科書** 為主要來源。完整書目請見 [`SOURCES.md`](SOURCES.md)。核心來源類別：
 
 - **專業軍事資料庫**：IISS *The Military Balance*（年度）、*Jane's Fighting Ships* / *Jane's All the World's Aircraft* / *Jane's Sentinel*、SIPRI Arms Transfers Database
 - **專業智庫**：CSIS（含 China Power Project、AMTI）、RAND、CNAS、NIDS（日本防衛研究所）、INDSR（國防安全研究院）、KIDA、ASPI
 - **官方國防文件**：美 DoD 中國軍力報告、CRS 報告、日本《防衛白書》、韓《國防白皮書》、ROC《國防報告書》/QDR、菲 AFP Modernization Program
-- **專書與參考書／教科書**：Polmar *Naval Institute Guide to the Ships and Aircraft of the U.S. Fleet*、Wertheim *Combat Fleets of the World*、Yoshihara & Holmes *Red Star over the Pacific*、Friedberg *A Contest for Supremacy*、Easton *Chinese Invasion Threat*、Osprey *New Vanguard/Weapon* 系列，等
+- **專書與參考書／教科書**：Polmar *Naval Institute Guide to the Ships and Aircraft of the U.S. Fleet*、Wertheim *Combat Fleets of the World*、Yoshihara & Holmes *Red Star over the Pacific*、Friedberg *A Contest for Supremacy*、Easton *Chinese Invasion Threat*、Erickson (ed.) *Chinese Naval Shipbuilding*、Osprey *New Vanguard/Weapon* 系列，等
 
 **用途**：學術研究、戰略分析、政策研究、新聞報導、地緣政治教學。
 
@@ -17,10 +17,24 @@
 
 ---
 
+## 資料規模
+
+| 國家 | 基地數 | 武器系統數 |
+|---|---:|---:|
+| US (美國 INDOPACOM) | 28 | 52 |
+| JP (日本) | 20 | 36 |
+| KR (韓國) | 20 | 40 |
+| TW (台灣) | 22 | 38 |
+| PH (菲律賓) | 16 | 25 |
+| CN (中國 PLA，對峙參考) | 28 | 57 |
+| **合計** | **134** | **248** |
+
+---
+
 ## 目錄結構
 
 ```
-data/military-database/
+datasets/military-database/
 ├── README.md                  # 本文件
 ├── SOURCES.md                 # 完整參考文獻／書目
 ├── schema.sql                 # SQLite/PostgreSQL 資料表結構
@@ -29,16 +43,16 @@ data/military-database/
 │   ├── japan.json
 │   ├── south_korea.json
 │   ├── taiwan.json
-│   └── philippines.json
+│   ├── philippines.json
+│   └── china.json
 ├── weapons/                   # 武器系統資料（依國家分檔）
-│   ├── united_states.json
-│   ├── japan.json
-│   ├── south_korea.json
-│   ├── taiwan.json
-│   └── philippines.json
-└── scripts/
-    ├── build_db.py            # 讀取 JSON → 產生 SQLite DB
-    └── query_examples.py      # 範例查詢
+│   └── {同上}.json
+├── scripts/
+│   ├── build_db.py            # 讀取 JSON → 產生 SQLite DB
+│   ├── query_examples.py      # 範例查詢
+│   ├── to_csv.py              # 匯出 CSV (bases.csv / weapons.csv)
+│   └── validate.py            # 資料完整性與 enum 驗證
+└── csv/                       # (export_csv.py 產出)
 ```
 
 ---
@@ -53,8 +67,8 @@ data/military-database/
 | name | string | 基地名稱 |
 | name_local | string | 當地語言名稱 |
 | country | string | ISO-3166 國碼 |
-| branch | string | 軍種 (Army/Navy/Air Force/Marines/Space/Coast Guard/Joint) |
-| type | string | 類型 (Airbase/Naval/Army/Joint/Missile/Radar/Logistics) |
+| branch | string | 軍種 (Army/Navy/Air Force/Marines/Space/Coast Guard/Rocket Force/Aerospace/Cyber/Joint) |
+| type | string | 類型 (Airbase/Naval/Army/Joint/Missile/Radar/Logistics/HQ/RnD) |
 | location | string | 地點 (縣市/州) |
 | latitude | float | 緯度（概略） |
 | longitude | float | 經度（概略） |
@@ -68,15 +82,15 @@ data/military-database/
 | 欄位 | 型別 | 說明 |
 |---|---|---|
 | id | string | 唯一識別碼 |
-| name | string | 型號（如 F-35A, Aegis, HIMARS） |
-| category | string | 類別 (Fighter/Bomber/Tank/Frigate/SSBN/SAM/SSM/Radar/ISR/UAV) |
+| name | string | 型號（如 F-35A, Aegis, HIMARS, DF-26） |
+| category | string | 類別 (Fighter/Bomber/Tank/Destroyer/SSBN/SAM/BMD/SRBM/MRBM/IRBM/ICBM/SLBM/CM/ASCM/Hypersonic/UAV/ASAT/…) |
 | branch | string | 服役軍種 |
 | country | string | 國碼 |
 | origin | string | 原產國 |
 | role | string | 角色任務 |
 | quantity | int | 服役數量（估計） |
 | in_service_since | int | 服役年份 |
-| status | string | Active/Retiring/Planned |
+| status | string | Active / Retiring / Planned / Ordered |
 | range_km | float | 射程 (km)（適用） |
 | notes | string | 備註 |
 
@@ -85,13 +99,48 @@ data/military-database/
 ## 快速使用
 
 ```bash
-cd data/military-database
-python3 scripts/build_db.py      # 產生 military.db (SQLite)
+cd datasets/military-database
+
+# 驗證資料完整性
+python3 scripts/validate.py
+
+# 產生 SQLite 資料庫
+python3 scripts/build_db.py                  # → military.db
+
+# 跑範例查詢
 python3 scripts/query_examples.py
+
+# 匯出 CSV（給 Excel/Pandas/BI 工具）
+python3 scripts/to_csv.py                    # → csv/bases.csv, csv/weapons.csv
+```
+
+### SQL 範例
+
+```sql
+-- 所有沖繩的美軍基地
+SELECT name, branch, type FROM bases
+WHERE country='US' AND location LIKE '%Okinawa%';
+
+-- 第一島鏈上所有射程 >1000 km 的打擊系統
+SELECT country, name, category, range_km FROM weapons
+WHERE range_km > 1000 AND country IN ('US','JP','KR','TW','PH')
+ORDER BY range_km DESC;
+
+-- 中方 PLARF 對台飛彈兵力
+SELECT name, category, range_km, quantity FROM weapons
+WHERE country='CN' AND branch='Rocket Force'
+ORDER BY range_km;
+
+-- 各國 Aegis/神盾艦清點
+SELECT country, name, quantity, in_service_since FROM weapons
+WHERE category='Destroyer' AND (notes LIKE '%Aegis%' OR name LIKE '%Aegis%'
+      OR name LIKE '%Sejong%' OR name LIKE '%Maya%' OR name LIKE '%Atago%'
+      OR name LIKE '%Kongo%' OR name LIKE '%Arleigh%' OR name LIKE '%Kee Lung%');
 ```
 
 ---
 
 ## 版本
 
-- v0.1.0 (2026-04-15)：初版，涵蓋五國主要基地與武器系統（代表性樣本，非窮舉）
+- **v0.2.0** (2026-04-15)：加入 PRC/PLA 作為對峙參考；134 基地 / 248 武器。新增 CSV 匯出與資料驗證。
+- v0.1.0：初版，涵蓋 US + JP/KR/TW/PH。

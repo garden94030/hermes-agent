@@ -22,6 +22,7 @@ COUNTRIES = [
     ("KR", "Republic of Korea", "대한민국"),
     ("TW", "Taiwan", "中華民國"),
     ("PH", "Philippines", "Republika ng Pilipinas"),
+    ("CN", "People's Republic of China", "中华人民共和国"),
 ]
 
 
