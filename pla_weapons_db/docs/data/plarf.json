@@ -1,0 +1,274 @@
+{
+  "service": {
+    "id": "plarf",
+    "name_zh": "中國人民解放軍火箭軍",
+    "name_en": "People's Liberation Army Rocket Force (PLARF)",
+    "headquarters": "北京清河",
+    "total_active_personnel_est": 120000,
+    "bases": [
+      {"code": "61", "name_zh": "61 基地", "hq_zh": "安徽黃山", "area": "東部戰區對臺方向"},
+      {"code": "62", "name_zh": "62 基地", "hq_zh": "雲南昆明", "area": "南部戰區"},
+      {"code": "63", "name_zh": "63 基地", "hq_zh": "湖南懷化", "area": "中部戰區 — 戰略核反擊"},
+      {"code": "64", "name_zh": "64 基地", "hq_zh": "甘肅蘭州", "area": "西部戰區 — 戰略核"},
+      {"code": "65", "name_zh": "65 基地", "hq_zh": "遼寧瀋陽", "area": "北部戰區"},
+      {"code": "66", "name_zh": "66 基地", "hq_zh": "河南洛陽", "area": "戰略核反擊"},
+      {"code": "67", "name_zh": "67 基地 (倉儲)", "hq_zh": "陝西寶雞", "area": "核彈頭倉儲"},
+      {"code": "68", "name_zh": "68 基地 (工程)", "hq_zh": "北京", "area": "工程建設"}
+    ],
+    "overview": "負責中國陸基戰略及戰役核力量、常規飛彈部隊。DoD 2024 CMPR 指出核彈頭庫存已逾 600 枚，2030 年預估逾 1000 枚。",
+    "sources": [
+      "U.S. DoD, CMPR 2024, pp. 77-96",
+      "中華民國國防部,《112年國防報告書》, 頁 49-50",
+      "CASI, 'PLA Rocket Force Organization' 2023",
+      "Kristensen & Korda (2024), FAS Nuclear Notebook"
+    ]
+  },
+  "equipment": [
+    {
+      "id": "plarf-df41",
+      "name_zh": "東風-41 洲際彈道飛彈",
+      "name_en": "DF-41 (CSS-20) ICBM",
+      "category": "洲際彈道飛彈",
+      "subcategory": "ICBM / 公路機動",
+      "launchers": 24,
+      "missiles_est": 36,
+      "introduced": 2020,
+      "specs": {
+        "射程_公里": 14000,
+        "彈頭": "3-10 枚 MIRV 獨立重返大氣載具",
+        "當量": "TNT 百萬噸級核彈頭",
+        "發射平台": "公路機動 / 鐵路機動 / 井基"
+      },
+      "deployment": [
+        {"base_zh": "黑龍江 (65基地) / 河南 (66基地)", "base_en": "Base 65 / 66", "lat": 44.52, "lng": 129.63, "theater": "戰略"},
+        {"base_zh": "新疆 (64基地)", "base_en": "Base 64 (Xinjiang silo fields)", "lat": 40.50, "lng": 90.00, "theater": "戰略"}
+      ],
+      "sources": [
+        "DoD CMPR 2024, pp. 81-86",
+        "Kristensen & Korda (2024), FAS Nuclear Notebook",
+        "CSIS Missile Defense Project, DF-41 entry",
+        "IISS, The Military Balance 2024, p. 272",
+        "Fravel, M. T. (2019). Active Defense. Princeton UP, pp. 220-225"
+      ]
+    },
+    {
+      "id": "plarf-df31ag",
+      "name_zh": "東風-31AG 洲際彈道飛彈",
+      "name_en": "DF-31AG (CSS-10 Mod 2) ICBM",
+      "category": "洲際彈道飛彈",
+      "subcategory": "ICBM / 公路機動",
+      "launchers": 60,
+      "missiles_est": 84,
+      "introduced": 2017,
+      "specs": {
+        "射程_公里": 12000,
+        "彈頭": "單彈頭核 (700 kt) 或 MIRV",
+        "發射平台": "8 軸越野公路機動"
+      },
+      "deployment": [
+        {"base_zh": "青海 (64基地)", "base_en": "Base 64", "lat": 37.0, "lng": 100.5, "theater": "戰略"},
+        {"base_zh": "湖南 (63基地)", "base_en": "Base 63", "lat": 27.3, "lng": 111.5, "theater": "戰略"}
+      ],
+      "sources": [
+        "DoD CMPR 2024, p. 83",
+        "Kristensen & Korda (2024), FAS Nuclear Notebook",
+        "CSIS Missile Defense Project, DF-31AG entry",
+        "IISS, The Military Balance 2024, p. 272"
+      ]
+    },
+    {
+      "id": "plarf-df5",
+      "name_zh": "東風-5B/C 洲際彈道飛彈",
+      "name_en": "DF-5B/C (CSS-4 Mod 3/5) ICBM",
+      "category": "洲際彈道飛彈",
+      "subcategory": "ICBM / 井基液燃",
+      "launchers": 20,
+      "missiles_est": 20,
+      "introduced": 1981,
+      "specs": {
+        "射程_公里": 13000,
+        "彈頭": "5-8 枚 MIRV (DF-5B) / 單彈頭高當量 (DF-5C)",
+        "發射方式": "固定發射井"
+      },
+      "deployment": [
+        {"base_zh": "湖南黔陽 (63基地)", "base_en": "Qianyang, Hunan (Base 63)", "lat": 27.5, "lng": 110.2, "theater": "戰略"}
+      ],
+      "sources": [
+        "DoD CMPR 2024, p. 82",
+        "Kristensen & Korda (2024), FAS Nuclear Notebook",
+        "Lewis & Xue Litai (2014), pp. 195-200",
+        "IISS, The Military Balance 2024, p. 272"
+      ]
+    },
+    {
+      "id": "plarf-df26",
+      "name_zh": "東風-26 中程彈道飛彈",
+      "name_en": "DF-26 (CSS-18) IRBM \"Guam Killer\"",
+      "category": "中程彈道飛彈",
+      "subcategory": "IRBM / 反艦 / 雙能力",
+      "launchers": 250,
+      "missiles_est": 500,
+      "introduced": 2016,
+      "specs": {
+        "射程_公里": 4000,
+        "彈頭": "核常兩用 1500 kg 彈頭；ASBM 反艦型打擊航艦",
+        "CEP_公尺": 150
+      },
+      "deployment": [
+        {"base_zh": "青海德令哈 (64基地)", "base_en": "Delingha (Base 64)", "lat": 37.37, "lng": 97.37, "theater": "戰略 / 西部戰區"},
+        {"base_zh": "信陽 (63基地)", "base_en": "Xinyang (Base 63)", "lat": 32.13, "lng": 114.07, "theater": "戰略"}
+      ],
+      "sources": [
+        "DoD CMPR 2024, pp. 79-81",
+        "CSIS Missile Defense Project, DF-26 entry",
+        "Stokes & Easton (2009). China's Evolving Conventional Strategic Strike Capability",
+        "IISS, The Military Balance 2024, p. 272"
+      ]
+    },
+    {
+      "id": "plarf-df21d",
+      "name_zh": "東風-21D 反艦彈道飛彈",
+      "name_en": "DF-21D (CSS-5 Mod 5) ASBM \"Carrier Killer\"",
+      "category": "反艦彈道飛彈",
+      "subcategory": "MRBM 反艦",
+      "launchers": 60,
+      "missiles_est": 84,
+      "introduced": 2010,
+      "specs": {
+        "射程_公里": 1500,
+        "彈頭": "機動重返載具 (MaRV)，具末端雷達導引",
+        "目標": "航空母艦、大型水面艦"
+      },
+      "deployment": [
+        {"base_zh": "61 基地 (東部) 對臺海 / 西太平洋", "base_en": "Base 61", "lat": 29.7, "lng": 118.3, "theater": "東部戰區"},
+        {"base_zh": "62 基地 (南部) 對南海 / 印度洋", "base_en": "Base 62", "lat": 25.04, "lng": 102.71, "theater": "南部戰區"}
+      ],
+      "sources": [
+        "Erickson, A. S. (2013). Chinese Anti-Ship Ballistic Missile (ASBM) Development. Jamestown Foundation",
+        "DoD CMPR 2024, p. 80",
+        "CSIS Missile Defense Project, DF-21D entry",
+        "IISS, The Military Balance 2024, p. 272",
+        "ROC 國防報告書 2023, p. 50"
+      ]
+    },
+    {
+      "id": "plarf-df17",
+      "name_zh": "東風-17 高超音速彈道飛彈",
+      "name_en": "DF-17 Hypersonic Missile",
+      "category": "高超音速武器",
+      "subcategory": "MRBM + HGV",
+      "launchers": 40,
+      "missiles_est": 40,
+      "introduced": 2019,
+      "specs": {
+        "射程_公里": 1800,
+        "彈頭": "DF-ZF 高超音速滑翔載具 (HGV)",
+        "特點": "飛行軌跡可大幅變化，突防現役 BMD",
+        "速度_馬赫": "5-10"
+      },
+      "deployment": [
+        {"base_zh": "61 基地 (東部戰區，面向臺海)", "base_en": "Base 61", "lat": 29.7, "lng": 118.3, "theater": "東部戰區"}
+      ],
+      "sources": [
+        "DoD CMPR 2024, pp. 79, 87",
+        "CSIS Missile Defense Project, DF-17 entry",
+        "IISS, The Military Balance 2024, p. 272",
+        "RAND, 'China's Hypersonic Weapons' (2022)"
+      ]
+    },
+    {
+      "id": "plarf-df16",
+      "name_zh": "東風-16 短程彈道飛彈",
+      "name_en": "DF-16 (CSS-11) SRBM",
+      "category": "短程彈道飛彈",
+      "subcategory": "SRBM",
+      "launchers": 60,
+      "missiles_est": 150,
+      "introduced": 2015,
+      "specs": {
+        "射程_公里": 1000,
+        "彈頭": "1000 kg 常規；具多種子彈頭選項",
+        "CEP_公尺": 30
+      },
+      "deployment": [
+        {"base_zh": "福建省 (61基地，面向臺海)", "base_en": "Fujian (Base 61)", "lat": 26.1, "lng": 119.3, "theater": "東部戰區"}
+      ],
+      "sources": [
+        "DoD CMPR 2024, p. 78",
+        "CSIS Missile Defense Project, DF-16 entry",
+        "IISS, The Military Balance 2024, p. 272"
+      ]
+    },
+    {
+      "id": "plarf-df15",
+      "name_zh": "東風-15B 短程彈道飛彈",
+      "name_en": "DF-15B (CSS-6) SRBM",
+      "category": "短程彈道飛彈",
+      "subcategory": "SRBM",
+      "launchers": 80,
+      "missiles_est": 200,
+      "introduced": 2000,
+      "specs": {
+        "射程_公里": 725,
+        "彈頭": "500 kg 常規",
+        "CEP_公尺": 30
+      },
+      "deployment": [
+        {"base_zh": "福建 / 廣東沿海 (61基地)", "base_en": "Fujian / Guangdong (Base 61)", "lat": 26.1, "lng": 119.3, "theater": "東部戰區"}
+      ],
+      "sources": [
+        "DoD CMPR 2024, p. 78",
+        "CSIS Missile Defense Project, DF-15 entry",
+        "IISS, The Military Balance 2024, p. 272",
+        "ROC 國防報告書 2023, p. 50"
+      ]
+    },
+    {
+      "id": "plarf-cj10",
+      "name_zh": "長劍-10 陸攻巡弋飛彈",
+      "name_en": "CJ-10 (DH-10) LACM",
+      "category": "巡弋飛彈",
+      "subcategory": "陸基陸攻",
+      "launchers": 100,
+      "missiles_est": 300,
+      "introduced": 2007,
+      "specs": {
+        "射程_公里": 1500,
+        "彈頭": "500 kg 常規或核",
+        "導引": "INS + 地形匹配 + GNSS + DSMAC"
+      },
+      "deployment": [
+        {"base_zh": "61、62、63 基地", "base_en": "Bases 61, 62, 63", "lat": 29.7, "lng": 118.3, "theater": "東部 / 南部戰區"}
+      ],
+      "sources": [
+        "DoD CMPR 2024, p. 79",
+        "CSIS Missile Defense Project, CJ-10 / DF-100 entry",
+        "Stokes & Easton (2009)",
+        "IISS, The Military Balance 2024, p. 272"
+      ]
+    },
+    {
+      "id": "plarf-cj100",
+      "name_zh": "長劍-100 超音速巡弋飛彈",
+      "name_en": "CJ-100 LACM",
+      "category": "巡弋飛彈",
+      "subcategory": "超音速陸攻",
+      "launchers": 30,
+      "missiles_est": 60,
+      "introduced": 2019,
+      "specs": {
+        "射程_公里": 2000,
+        "速度_馬赫": 4,
+        "特點": "高超音速彈道末端突防"
+      },
+      "deployment": [
+        {"base_zh": "61、63 基地", "base_en": "Bases 61, 63", "lat": 29.7, "lng": 118.3, "theater": "戰略 / 東部戰區"}
+      ],
+      "sources": [
+        "DoD CMPR 2024, p. 79",
+        "CSIS Missile Defense Project, CJ-100 entry",
+        "IISS, The Military Balance 2024, p. 272"
+      ]
+    }
+  ]
+}

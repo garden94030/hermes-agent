@@ -1,0 +1,170 @@
+{
+  "service": {
+    "id": "plaisf",
+    "name_zh": "中國人民解放軍資訊支援部隊",
+    "name_en": "People's Liberation Army Information Support Force (PLAISF)",
+    "headquarters": "北京",
+    "total_active_personnel_est": 175000,
+    "overview": "2024 年 4 月 19 日由原戰略支援部隊 (PLASSF) 重組而成。負責網路空間、電磁頻譜、情監偵、衛星通訊、指揮管制資訊系統，為聯合作戰神經中樞。",
+    "sub_branches": [
+      {"name_zh": "網路空間部隊", "name_en": "Cyberspace Force", "role": "進攻與防禦網路作戰"},
+      {"name_zh": "航天部隊", "name_en": "Aerospace Force", "role": "太空偵察、反衛星、衛星導航"},
+      {"name_zh": "資訊支援部隊", "name_en": "Information Support Force", "role": "C4ISR、指管通情"}
+    ],
+    "sources": [
+      "U.S. DoD, CMPR 2024, pp. 100-109",
+      "中華民國國防部,《112年國防報告書》, 頁 51-52",
+      "Allen, K. (2017). PLA's New Organizational Structure. China Brief / Jamestown",
+      "CASI, 'PLA Information Support Force' 2024"
+    ]
+  },
+  "equipment": [
+    {
+      "id": "plaisf-c4isr",
+      "name_zh": "戰區聯合作戰指揮資訊系統",
+      "name_en": "Theater Joint Operations C4ISR System",
+      "category": "指管通情",
+      "subcategory": "C4ISR",
+      "quantity": 5,
+      "introduced": 2016,
+      "specs": {
+        "覆蓋": "五大戰區 + 軍委聯指",
+        "功能": "情報共享、態勢感知、聯合指揮"
+      },
+      "deployment": [
+        {"base_zh": "各戰區聯指中心", "base_en": "Theater Joint Operations Centers", "lat": 39.9, "lng": 116.4, "theater": "全域"}
+      ],
+      "sources": [
+        "DoD CMPR 2024, p. 101",
+        "CASI 'Chinese Joint Operations Doctrine' 2023",
+        "Saunders et al. (2019). Chairman Xi Remakes the PLA. NDU Press"
+      ]
+    },
+    {
+      "id": "plaisf-link",
+      "name_zh": "共軍一體化資料鏈",
+      "name_en": "PLA Integrated Data Link",
+      "category": "資料鏈",
+      "subcategory": "戰術資料鏈",
+      "quantity": 1,
+      "introduced": 2015,
+      "specs": {
+        "類型": "跨軍種一體化資料鏈 (中式 Link-16 對應)",
+        "連結對象": "戰機、艦艇、預警機、地面站"
+      },
+      "deployment": [
+        {"base_zh": "全軍覆蓋", "base_en": "PLA-wide", "lat": 39.9, "lng": 116.4, "theater": "全域"}
+      ],
+      "sources": [
+        "DoD CMPR 2024, p. 101",
+        "CASI 'PLA Networks & Data Links'"
+      ]
+    },
+    {
+      "id": "plaisf-satcom",
+      "name_zh": "中星系列軍用通訊衛星",
+      "name_en": "ChinaSat Military Communication Satellites",
+      "category": "衛星通訊",
+      "subcategory": "GEO 軍通",
+      "quantity": 12,
+      "introduced": 2010,
+      "specs": {
+        "軌道": "地球同步軌道 (GEO)",
+        "頻段": "C / Ku / Ka / UHF"
+      },
+      "deployment": [
+        {"base_zh": "地球同步軌道", "base_en": "GEO", "lat": 0, "lng": 105, "theater": "太空"}
+      ],
+      "sources": [
+        "DoD CMPR 2024, pp. 103-105",
+        "SIPRI Yearbook 2023, Chapter on Space",
+        "ASPI ICPC Satellite Database"
+      ]
+    },
+    {
+      "id": "plaisf-yaogan",
+      "name_zh": "遙感系列偵察衛星",
+      "name_en": "Yaogan Reconnaissance Satellite Series",
+      "category": "情監偵",
+      "subcategory": "光學 / SAR / ELINT 衛星",
+      "quantity": 200,
+      "introduced": 2006,
+      "specs": {
+        "軌道": "LEO 低地球軌道",
+        "感測器": "光學、合成孔徑雷達 (SAR)、電子情報 (ELINT)"
+      },
+      "deployment": [
+        {"base_zh": "低地球軌道群", "base_en": "LEO constellation", "lat": 0, "lng": 0, "theater": "太空"}
+      ],
+      "sources": [
+        "DoD CMPR 2024, pp. 103-105",
+        "SIPRI Yearbook 2023",
+        "ASPI ICPC Satellite Database",
+        "NTI, China Space & Counterspace Capabilities"
+      ]
+    },
+    {
+      "id": "plaisf-beidou",
+      "name_zh": "北斗三號全球衛星導航系統",
+      "name_en": "BeiDou-3 Global Navigation Satellite System (BDS)",
+      "category": "衛星導航",
+      "subcategory": "全球衛星導航",
+      "quantity": 35,
+      "introduced": 2020,
+      "specs": {
+        "軌道": "GEO (5) + IGSO (3) + MEO (27)",
+        "功能": "全球導航、短訊通訊、精密授時"
+      },
+      "deployment": [
+        {"base_zh": "全球覆蓋", "base_en": "Global coverage", "lat": 0, "lng": 0, "theater": "太空"}
+      ],
+      "sources": [
+        "DoD CMPR 2024, p. 103",
+        "IISS Strategic Survey 2021, pp. 145-148",
+        "Wuthnow et al. (2021). The PLA Beyond Borders, pp. 280-284"
+      ]
+    },
+    {
+      "id": "plaisf-cyber",
+      "name_zh": "網路空間作戰兵力",
+      "name_en": "Cyberspace Operations Forces",
+      "category": "網路空間作戰",
+      "subcategory": "CNO / CNA / CNE",
+      "quantity": 30000,
+      "introduced": 2015,
+      "specs": {
+        "編制": "原戰略支援部隊網絡系統部改編",
+        "任務": "網路偵察、攻擊、防禦"
+      },
+      "deployment": [
+        {"base_zh": "北京、上海、武漢、廣州 等", "base_en": "Beijing, Shanghai, Wuhan, Guangzhou", "lat": 39.9, "lng": 116.4, "theater": "全域"}
+      ],
+      "sources": [
+        "DoD CMPR 2024, pp. 105-107",
+        "Allen, K. (2017). PLA's New Organizational Structure",
+        "USCC 2023 Annual Report, Chapter on Cyber"
+      ]
+    },
+    {
+      "id": "plaisf-ew",
+      "name_zh": "戰略電磁頻譜作戰力量",
+      "name_en": "Strategic Electromagnetic Spectrum Operations Force",
+      "category": "電子戰",
+      "subcategory": "EW / SIGINT",
+      "quantity": 1,
+      "introduced": 2015,
+      "specs": {
+        "平台": "Y-9G / Y-9JB 電戰機、地面干擾站",
+        "任務": "戰略級電磁頻譜偵察與干擾"
+      },
+      "deployment": [
+        {"base_zh": "各戰區 + 戰略級電戰旅", "base_en": "Theater + Strategic EW brigades", "lat": 39.9, "lng": 116.4, "theater": "全域"}
+      ],
+      "sources": [
+        "DoD CMPR 2024, p. 51",
+        "Janes All the World's Aircraft, Y-9 variants entry",
+        "IISS, The Military Balance 2024, p. 269"
+      ]
+    }
+  ]
+}

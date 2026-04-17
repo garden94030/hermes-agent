@@ -1,0 +1,30 @@
+{
+  "metadata": {
+    "title_zh": "中國人民解放軍武器裝備資料庫",
+    "title_en": "PLA Weapons & Equipment Database",
+    "version": "2.0.0",
+    "last_updated": "2026-04-17",
+    "data_cutoff": "資料截至 2024 年底 (DoD CMPR 2024 公布為準)",
+    "license": "MIT (程式碼) / 原始資料權屬各機關",
+    "description_zh": "依軍種分類之 PLA 主要武器系統。融合 pla-weapons-dashboard 的數量、部署座標與本專案的專業來源引用。",
+    "description_en": "PLA weapons across all service branches. Merges quantity & deployment data with per-entry source citations from IISS, Janes, DoD CMPR, FAS Nuclear Notebook, CSIS Missile Threat.",
+    "primary_sources": [
+      "U.S. DoD, Military and Security Developments Involving the PRC 2024 (CMPR 2024)",
+      "中華民國國防部,《中華民國112年國防報告書》",
+      "IISS, The Military Balance 2024",
+      "Janes Fighting Ships / All the World's Aircraft / Land Warfare Platforms",
+      "U.S. Office of Naval Intelligence (ONI), China Naval Forces",
+      "Kristensen & Korda (2024), FAS Nuclear Notebook",
+      "CSIS Missile Defense Project (missilethreat.csis.org)",
+      "U.S. Air University, China Aerospace Studies Institute (CASI)"
+    ]
+  },
+  "services": [
+    {"id":"plaa","name_zh":"陸軍","name_en":"PLAA","file":"data/plaa.json","color":"#3E5F3C","icon":"🪖"},
+    {"id":"plan","name_zh":"海軍","name_en":"PLAN","file":"data/plan.json","color":"#1F4E79","icon":"⚓"},
+    {"id":"plaaf","name_zh":"空軍","name_en":"PLAAF","file":"data/plaaf.json","color":"#4A90C2","icon":"✈️"},
+    {"id":"plarf","name_zh":"火箭軍","name_en":"PLARF","file":"data/plarf.json","color":"#A33A3A","icon":"🚀"},
+    {"id":"plaisf","name_zh":"資訊支援部隊","name_en":"PLAISF","file":"data/plaisf.json","color":"#6B4F8A","icon":"🛰️"}
+  ],
+  "trends_file": "data/trends.json"
+}

@@ -1,0 +1,330 @@
+{
+  "service": {
+    "id": "plaa",
+    "name_zh": "中國人民解放軍陸軍",
+    "name_en": "People's Liberation Army Ground Force (PLAA)",
+    "headquarters": "北京",
+    "total_active_personnel_est": 965000,
+    "theaters": [
+      {"name_zh": "東部戰區陸軍", "hq": "福州", "name_en": "Eastern Theater Army"},
+      {"name_zh": "南部戰區陸軍", "hq": "南寧", "name_en": "Southern Theater Army"},
+      {"name_zh": "西部戰區陸軍", "hq": "蘭州", "name_en": "Western Theater Army"},
+      {"name_zh": "北部戰區陸軍", "hq": "濟南", "name_en": "Northern Theater Army"},
+      {"name_zh": "中部戰區陸軍", "hq": "石家莊", "name_en": "Central Theater Army"}
+    ],
+    "overview": "世界上兵員最多的陸軍。已改制為 13 個集團軍，編成「合成旅」為基本戰術單位；DoD 2024 CMPR 指出陸軍持續推進機械化、信息化、智能化三化融合。",
+    "sources": [
+      "U.S. DoD, CMPR 2024, pp. 49-52",
+      "中華民國國防部,《112年國防報告書》, 頁 44-46",
+      "U.S. DIA, China Military Power (2019)"
+    ]
+  },
+  "equipment": [
+    {
+      "id": "plaa-ztz99a",
+      "name_zh": "99A 式主戰坦克",
+      "name_en": "ZTZ-99A Main Battle Tank",
+      "category": "主戰坦克",
+      "subcategory": "三代+",
+      "quantity": 1000,
+      "introduced": 2011,
+      "specs": {
+        "重量_噸": 58,
+        "主砲": "125 mm 滑膛砲 (可發射砲射飛彈)",
+        "引擎_馬力": 1500,
+        "最大速度_公里每小時": 70,
+        "裝甲": "複合裝甲 + 爆炸反應裝甲 (ERA) + 主動防護系統"
+      },
+      "deployment": [
+        {"base_zh": "中部戰區（38、81、82集團軍）", "base_en": "Central TC", "lat": 38.04, "lng": 114.48, "theater": "中部戰區"},
+        {"base_zh": "北部戰區（78、79、80集團軍）", "base_en": "Northern TC", "lat": 36.65, "lng": 117.00, "theater": "北部戰區"}
+      ],
+      "sources": [
+        "IISS, The Military Balance 2024, p. 270",
+        "Blasko, D. J. (2012). The Chinese Army Today (2nd ed.). Routledge, pp. 91-95",
+        "Janes Land Warfare Platforms: AFV, Type 99 MBT entry",
+        "DoD CMPR 2024, p. 50",
+        "ROC 國防報告書 2023, p. 46"
+      ]
+    },
+    {
+      "id": "plaa-ztz96a",
+      "name_zh": "96A/B 式主戰坦克",
+      "name_en": "ZTZ-96A/B Main Battle Tank",
+      "category": "主戰坦克",
+      "subcategory": "三代",
+      "quantity": 2500,
+      "introduced": 2005,
+      "specs": {
+        "重量_噸": 42.5,
+        "主砲": "125 mm 滑膛砲",
+        "引擎_馬力": 1000,
+        "最大速度_公里每小時": 65
+      },
+      "deployment": [
+        {"base_zh": "各戰區普遍裝備", "base_en": "All theaters", "lat": 34.0, "lng": 108.0, "theater": "全域"}
+      ],
+      "sources": [
+        "IISS, The Military Balance 2024, p. 270",
+        "Blasko (2012), pp. 88-91",
+        "Janes Land Warfare Platforms, Type 96 MBT entry",
+        "DoD CMPR 2024, p. 50"
+      ]
+    },
+    {
+      "id": "plaa-ztq15",
+      "name_zh": "15 式輕型坦克",
+      "name_en": "ZTQ-15 Light Tank",
+      "category": "主戰坦克",
+      "subcategory": "高原 / 山地輕型",
+      "quantity": 500,
+      "introduced": 2018,
+      "specs": {
+        "重量_噸": 35,
+        "主砲": "105 mm 線膛砲 (可發射砲射飛彈)",
+        "引擎_馬力": 1000,
+        "最大速度_公里每小時": 70,
+        "特點": "專為青藏高原與南方水網地形設計"
+      },
+      "deployment": [
+        {"base_zh": "西藏軍區 / 新疆軍區", "base_en": "Tibet / Xinjiang MD", "lat": 29.65, "lng": 91.13, "theater": "西部戰區"},
+        {"base_zh": "南部戰區 75 集團軍", "base_en": "75th Group Army", "lat": 22.82, "lng": 108.37, "theater": "南部戰區"}
+      ],
+      "sources": [
+        "IISS, The Military Balance 2024, p. 270",
+        "DoD CMPR 2024, p. 50",
+        "Janes Land Warfare Platforms, Type 15 Light Tank entry",
+        "ASPI, China's Military Modernisation (2023)"
+      ]
+    },
+    {
+      "id": "plaa-zbd04a",
+      "name_zh": "04A 式步兵戰車",
+      "name_en": "ZBD-04A IFV",
+      "category": "步兵戰車",
+      "subcategory": "履帶式",
+      "quantity": 1200,
+      "introduced": 2010,
+      "specs": {
+        "重量_噸": 24.5,
+        "主砲": "100 mm 線膛砲 + 30 mm 機砲",
+        "乘員_載員": "3 + 7",
+        "具兩棲能力": true
+      },
+      "deployment": [
+        {"base_zh": "重型合成旅（各戰區）", "base_en": "Heavy Combined-Arms Brigades", "lat": 34.0, "lng": 108.0, "theater": "全域"}
+      ],
+      "sources": [
+        "IISS, The Military Balance 2024, p. 270",
+        "Blasko (2012), pp. 95-98",
+        "Janes Land Warfare Platforms, ZBD-04A entry",
+        "DoD CMPR 2024, p. 51"
+      ]
+    },
+    {
+      "id": "plaa-zbl08",
+      "name_zh": "08 式輪式步兵戰車（猛士）",
+      "name_en": "ZBL-08 Wheeled IFV",
+      "category": "步兵戰車",
+      "subcategory": "8x8 輪式",
+      "quantity": 1500,
+      "introduced": 2009,
+      "specs": {
+        "重量_噸": 21,
+        "主砲": "30 mm 機砲 + HJ-73C 反戰車飛彈",
+        "乘員_載員": "3 + 7"
+      },
+      "deployment": [
+        {"base_zh": "中型合成旅（各戰區）", "base_en": "Medium Combined-Arms Brigades", "lat": 34.0, "lng": 108.0, "theater": "全域"}
+      ],
+      "sources": [
+        "IISS, The Military Balance 2024, p. 270",
+        "Janes Land Warfare Platforms, ZBL-08/VN-1 entry",
+        "Blasko (2012), pp. 99-102",
+        "DoD CMPR 2024, p. 51"
+      ]
+    },
+    {
+      "id": "plaa-plz05",
+      "name_zh": "05 式自行加榴砲",
+      "name_en": "PLZ-05 SPH",
+      "category": "自行火砲",
+      "subcategory": "155 mm 履帶式",
+      "quantity": 300,
+      "introduced": 2008,
+      "specs": {
+        "口徑_毫米": 155,
+        "射程_公里": 53,
+        "射速_發每分": 8,
+        "可發射": "GP6 雷射導引砲彈"
+      },
+      "deployment": [
+        {"base_zh": "各集團軍砲兵旅", "base_en": "Artillery brigades", "lat": 34.0, "lng": 108.0, "theater": "全域"}
+      ],
+      "sources": [
+        "IISS, The Military Balance 2024, p. 271",
+        "Janes Land Warfare Platforms: Artillery, PLZ-05 entry",
+        "DoD CMPR 2024, p. 51"
+      ]
+    },
+    {
+      "id": "plaa-pcl181",
+      "name_zh": "PCL-181 輪式自走砲",
+      "name_en": "PCL-181 Wheeled SPH",
+      "category": "自行火砲",
+      "subcategory": "155 mm 6×6 輪式",
+      "quantity": 350,
+      "introduced": 2019,
+      "specs": {
+        "口徑_毫米": 155,
+        "射程_公里": 50,
+        "底盤": "Shaanxi SX2150 卡車"
+      },
+      "deployment": [
+        {"base_zh": "西部戰區 / 南部戰區 山地部隊", "base_en": "Western / Southern TC", "lat": 29.65, "lng": 91.13, "theater": "西部戰區"}
+      ],
+      "sources": [
+        "IISS, The Military Balance 2024, p. 271",
+        "Janes Land Warfare Platforms: Artillery, PCL-181/SH-15 entry",
+        "DoD CMPR 2024, p. 51"
+      ]
+    },
+    {
+      "id": "plaa-phl16",
+      "name_zh": "PHL-16 遠程火箭砲",
+      "name_en": "PHL-16 (PCH-191) MLRS",
+      "category": "多管火箭砲",
+      "subcategory": "遠程模組化",
+      "quantity": 150,
+      "introduced": 2019,
+      "specs": {
+        "口徑與射程": "300 mm (70-130 km)、370 mm (220 km)、750 mm 戰術彈道飛彈 (350-500 km)",
+        "管數": "8 或 2 × 4"
+      },
+      "deployment": [
+        {"base_zh": "東部戰區 71、72、73 集團軍", "base_en": "71st-73rd Group Armies", "lat": 30.00, "lng": 119.00, "theater": "東部戰區"}
+      ],
+      "sources": [
+        "IISS, The Military Balance 2024, p. 271",
+        "CSIS Missile Defense Project, PCH-191 entry",
+        "Janes Land Warfare Platforms, PCH-191/PHL-16 entry",
+        "DoD CMPR 2024, p. 51",
+        "ROC 國防報告書 2023, p. 46"
+      ]
+    },
+    {
+      "id": "plaa-phl03",
+      "name_zh": "PHL-03 遠程火箭砲",
+      "name_en": "PHL-03 MLRS",
+      "category": "多管火箭砲",
+      "subcategory": "300 mm 12 管",
+      "quantity": 180,
+      "introduced": 2004,
+      "specs": {
+        "口徑_毫米": 300,
+        "管數": 12,
+        "射程_公里": 130
+      },
+      "deployment": [
+        {"base_zh": "中部戰區砲兵旅", "base_en": "Central TC artillery brigades", "lat": 38.04, "lng": 114.48, "theater": "中部戰區"}
+      ],
+      "sources": [
+        "IISS, The Military Balance 2024, p. 271",
+        "Janes Land Warfare Platforms: Artillery, PHL-03 entry",
+        "Blasko (2012), pp. 102-104",
+        "DoD CMPR 2024, p. 51"
+      ]
+    },
+    {
+      "id": "plaa-hq17",
+      "name_zh": "紅旗-17A 防空飛彈系統",
+      "name_en": "HQ-17A SAM",
+      "category": "防空飛彈",
+      "subcategory": "短程點防空",
+      "quantity": 400,
+      "introduced": 2018,
+      "specs": {
+        "射程_公里": 20,
+        "射高_公尺": 10000,
+        "導引": "指令 + 半主動雷達"
+      },
+      "deployment": [
+        {"base_zh": "合成旅防空營", "base_en": "Brigade air-defense battalions", "lat": 34.0, "lng": 108.0, "theater": "全域"}
+      ],
+      "sources": [
+        "IISS, The Military Balance 2024, p. 271",
+        "Janes Land Warfare Platforms: Air Defence, HQ-17 entry",
+        "DoD CMPR 2024, p. 52"
+      ]
+    },
+    {
+      "id": "plaa-z10",
+      "name_zh": "直-10 攻擊直升機",
+      "name_en": "CAIC Z-10",
+      "category": "攻擊直升機",
+      "subcategory": "專用攻擊",
+      "quantity": 280,
+      "introduced": 2012,
+      "specs": {
+        "最大速度_公里每小時": 300,
+        "作戰半徑_公里": 400,
+        "主要武器": "HJ-10 反戰車飛彈、TY-90 空對空、23 mm 機砲、57/70 mm 火箭彈"
+      },
+      "deployment": [
+        {"base_zh": "東部戰區陸航第 5 旅 (南京)", "base_en": "5th Army Aviation Brigade", "lat": 32.06, "lng": 118.80, "theater": "東部戰區"},
+        {"base_zh": "南部戰區陸航第 6 旅 (南寧)", "base_en": "6th Army Aviation Brigade", "lat": 22.82, "lng": 108.37, "theater": "南部戰區"}
+      ],
+      "sources": [
+        "IISS, The Military Balance 2024, p. 271",
+        "Janes All the World's Aircraft, WZ-10 entry",
+        "O'Brien & Erickson (2019). Chinese Aerospace Power, pp. 178-182",
+        "DoD CMPR 2024, p. 52"
+      ]
+    },
+    {
+      "id": "plaa-z19",
+      "name_zh": "直-19 武裝偵察直升機",
+      "name_en": "Harbin Z-19",
+      "category": "武裝偵察直升機",
+      "subcategory": "輕型",
+      "quantity": 200,
+      "introduced": 2012,
+      "specs": {
+        "最大速度_公里每小時": 280,
+        "作戰半徑_公里": 350,
+        "武器": "HJ-8 反戰車飛彈、TY-90 空對空飛彈"
+      },
+      "deployment": [
+        {"base_zh": "各陸航旅", "base_en": "Army aviation brigades", "lat": 34.0, "lng": 108.0, "theater": "全域"}
+      ],
+      "sources": [
+        "IISS, The Military Balance 2024, p. 271",
+        "Janes All the World's Aircraft, Z-19 entry",
+        "DoD CMPR 2024, p. 52"
+      ]
+    },
+    {
+      "id": "plaa-z20",
+      "name_zh": "直-20 通用直升機",
+      "name_en": "Harbin Z-20",
+      "category": "通用直升機",
+      "subcategory": "10 噸級中型",
+      "quantity": 250,
+      "introduced": 2019,
+      "specs": {
+        "最大起飛重量_噸": 10,
+        "最大速度_公里每小時": 298,
+        "航程_公里": 1000,
+        "可運": "12-14 人員"
+      },
+      "deployment": [
+        {"base_zh": "陸軍航空兵各戰區", "base_en": "Army aviation, all TCs", "lat": 34.0, "lng": 108.0, "theater": "全域"}
+      ],
+      "sources": [
+        "IISS, The Military Balance 2024, p. 271",
+        "Janes All the World's Aircraft, Z-20 entry",
+        "DoD CMPR 2024, p. 52, p. 62"
+      ]
+    }
+  ]
+}

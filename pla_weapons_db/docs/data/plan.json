@@ -1,0 +1,409 @@
+{
+  "service": {
+    "id": "plan",
+    "name_zh": "中國人民解放軍海軍",
+    "name_en": "People's Liberation Army Navy (PLAN)",
+    "headquarters": "北京",
+    "total_active_personnel_est": 260000,
+    "fleets": [
+      {"name_zh": "北海艦隊", "hq": "青島", "name_en": "North Sea Fleet", "theater": "北部戰區海軍"},
+      {"name_zh": "東海艦隊", "hq": "寧波", "name_en": "East Sea Fleet", "theater": "東部戰區海軍"},
+      {"name_zh": "南海艦隊", "hq": "湛江", "name_en": "South Sea Fleet", "theater": "南部戰區海軍"}
+    ],
+    "overview": "全球艦艇總數最多的海軍，DoD 2024 CMPR 指出戰鬥艦艇數已達 370 艘，預計 2030 年將達 435 艘；航艦、055 大驅、075 LHD 持續擴編。",
+    "sources": [
+      "U.S. DoD, CMPR 2024, pp. 53-63",
+      "U.S. ONI, China People's Liberation Army Navy",
+      "中華民國國防部,《112年國防報告書》, 頁 47-48"
+    ]
+  },
+  "equipment": [
+    {
+      "id": "plan-cv-001",
+      "name_zh": "遼寧艦",
+      "name_en": "CV-16 Liaoning",
+      "category": "航空母艦",
+      "subcategory": "Type 001",
+      "quantity": 1,
+      "introduced": 2012,
+      "specs": {
+        "排水量_噸": 60000,
+        "全長_公尺": 304.5,
+        "最大航速_節": 32,
+        "艦載機": 44,
+        "推進": "8 × 蒸汽鍋爐 4 軸",
+        "起飛方式": "滑跳式"
+      },
+      "deployment": [
+        {"base_zh": "青島軍港 (小口子)", "base_en": "Qingdao NB", "lat": 36.117, "lng": 120.517, "theater": "北部戰區海軍"}
+      ],
+      "sources": [
+        "IISS, The Military Balance 2024, p. 265",
+        "Cole, B. D. (2016). The Great Wall at Sea (2nd ed.). Naval Institute Press, pp. 95-100",
+        "ONI, The PLA Navy (2015), pp. 14-17",
+        "DoD CMPR 2024, p. 54",
+        "ROC 國防報告書 2023, p. 48"
+      ]
+    },
+    {
+      "id": "plan-cv-002",
+      "name_zh": "山東艦",
+      "name_en": "CV-17 Shandong",
+      "category": "航空母艦",
+      "subcategory": "Type 002",
+      "quantity": 1,
+      "introduced": 2019,
+      "specs": {
+        "排水量_噸": 66000,
+        "全長_公尺": 315,
+        "最大航速_節": 31,
+        "艦載機": 44,
+        "起飛方式": "滑跳式",
+        "首艘國產": true
+      },
+      "deployment": [
+        {"base_zh": "三亞榆林基地", "base_en": "Yulin NB", "lat": 18.227, "lng": 109.521, "theater": "南部戰區海軍"}
+      ],
+      "sources": [
+        "IISS, The Military Balance 2024, p. 265",
+        "DoD CMPR 2024, p. 54",
+        "CSIS China Power, 'How Is China Modernizing Its Navy?'",
+        "ONI, China Naval Forces (2020), p. 10"
+      ]
+    },
+    {
+      "id": "plan-cv-003",
+      "name_zh": "福建艦",
+      "name_en": "CV-18 Fujian",
+      "category": "航空母艦",
+      "subcategory": "Type 003",
+      "quantity": 1,
+      "introduced": 2024,
+      "specs": {
+        "排水量_噸": 80000,
+        "全長_公尺": 316,
+        "最大航速_節": 30,
+        "艦載機": 60,
+        "動力": "傳統動力",
+        "彈射": "電磁彈射 (EMALS)"
+      },
+      "deployment": [
+        {"base_zh": "上海江南造船廠 (海試中)", "base_en": "Jiangnan SY (sea trials)", "lat": 31.2, "lng": 121.8, "theater": "東部戰區海軍預定"}
+      ],
+      "sources": [
+        "IISS, The Military Balance 2024, p. 265",
+        "DoD CMPR 2024, pp. 54-55",
+        "CSIS China Power, 'How Is China Modernizing Its Navy?'",
+        "USCC 2022 Annual Report, Chapter 2"
+      ]
+    },
+    {
+      "id": "plan-ddg-055",
+      "name_zh": "055 型飛彈驅逐艦 (南昌級)",
+      "name_en": "Type 055 Renhai-class DDG",
+      "category": "驅逐艦",
+      "subcategory": "Type 055",
+      "quantity": 8,
+      "introduced": 2020,
+      "specs": {
+        "排水量_噸": 13000,
+        "全長_公尺": 180,
+        "最大航速_節": 30,
+        "VLS": 112,
+        "主要武器": "YJ-18, HHQ-9B, CJ-10, YU-8, YJ-21",
+        "雷達": "346B 型有源相位陣列"
+      },
+      "deployment": [
+        {"base_zh": "青島", "base_en": "Qingdao", "lat": 36.07, "lng": 120.38, "theater": "北部戰區海軍"},
+        {"base_zh": "舟山", "base_en": "Zhoushan", "lat": 29.99, "lng": 122.21, "theater": "東部戰區海軍"},
+        {"base_zh": "三亞", "base_en": "Sanya", "lat": 18.25, "lng": 109.52, "theater": "南部戰區海軍"}
+      ],
+      "sources": [
+        "IISS, The Military Balance 2024, p. 265",
+        "Janes Fighting Ships, Type 055 (Renhai-class) entry",
+        "ONI, China Naval Forces (2020), pp. 20-22",
+        "DoD CMPR 2024, p. 56",
+        "ROC 國防報告書 2023, p. 47"
+      ]
+    },
+    {
+      "id": "plan-ddg-052d",
+      "name_zh": "052D 型飛彈驅逐艦 (昆明級)",
+      "name_en": "Type 052D Luyang III-class",
+      "category": "驅逐艦",
+      "subcategory": "Type 052D/DL",
+      "quantity": 30,
+      "introduced": 2014,
+      "specs": {
+        "排水量_噸": 7500,
+        "全長_公尺": 157,
+        "最大航速_節": 30,
+        "VLS": 64,
+        "主要武器": "YJ-18, HHQ-9B, CJ-10",
+        "雷達": "346A 型有源相位陣列"
+      },
+      "deployment": [
+        {"base_zh": "青島", "base_en": "Qingdao", "lat": 36.07, "lng": 120.38, "theater": "北部戰區海軍"},
+        {"base_zh": "舟山", "base_en": "Zhoushan", "lat": 29.99, "lng": 122.21, "theater": "東部戰區海軍"},
+        {"base_zh": "湛江", "base_en": "Zhanjiang", "lat": 21.27, "lng": 110.36, "theater": "南部戰區海軍"}
+      ],
+      "sources": [
+        "IISS, The Military Balance 2024, p. 265",
+        "Janes Fighting Ships, Type 052D (Luyang III) entry",
+        "ONI, China Naval Forces (2020), pp. 22-24",
+        "DoD CMPR 2024, pp. 55-57"
+      ]
+    },
+    {
+      "id": "plan-ddg-052c",
+      "name_zh": "052C 型飛彈驅逐艦 (蘭州級)",
+      "name_en": "Type 052C Luyang II-class",
+      "category": "驅逐艦",
+      "subcategory": "Type 052C",
+      "quantity": 6,
+      "introduced": 2004,
+      "specs": {
+        "排水量_噸": 7000,
+        "全長_公尺": 154,
+        "最大航速_節": 29,
+        "VLS": 48,
+        "主要武器": "YJ-62, HHQ-9",
+        "雷達": "348 型有源相位陣列"
+      },
+      "deployment": [
+        {"base_zh": "湛江", "base_en": "Zhanjiang", "lat": 21.27, "lng": 110.36, "theater": "南部戰區海軍"},
+        {"base_zh": "舟山", "base_en": "Zhoushan", "lat": 29.99, "lng": 122.21, "theater": "東部戰區海軍"}
+      ],
+      "sources": [
+        "IISS, The Military Balance 2024, p. 265",
+        "Janes Fighting Ships, Type 052C entry",
+        "DoD CMPR 2024, p. 56"
+      ]
+    },
+    {
+      "id": "plan-ffg-054a",
+      "name_zh": "054A 型飛彈巡防艦 (江凱 II 級)",
+      "name_en": "Type 054A Jiangkai II-class",
+      "category": "巡防艦",
+      "subcategory": "Type 054A/B",
+      "quantity": 40,
+      "introduced": 2008,
+      "specs": {
+        "排水量_噸": 4050,
+        "全長_公尺": 134,
+        "最大航速_節": 27,
+        "VLS": 32,
+        "主要武器": "YJ-83, HQ-16, YU-7"
+      },
+      "deployment": [
+        {"base_zh": "舟山", "base_en": "Zhoushan", "lat": 29.99, "lng": 122.21, "theater": "東部戰區海軍"},
+        {"base_zh": "湛江", "base_en": "Zhanjiang", "lat": 21.27, "lng": 110.36, "theater": "南部戰區海軍"},
+        {"base_zh": "青島", "base_en": "Qingdao", "lat": 36.07, "lng": 120.38, "theater": "北部戰區海軍"}
+      ],
+      "sources": [
+        "IISS, The Military Balance 2024, p. 266",
+        "Janes Fighting Ships, Type 054A (Jiangkai II) entry",
+        "Cole (2016), pp. 110-112",
+        "DoD CMPR 2024, p. 57",
+        "ROC 國防報告書 2023, p. 47"
+      ]
+    },
+    {
+      "id": "plan-ffl-056a",
+      "name_zh": "056/056A 型輕巡防艦 (江島級)",
+      "name_en": "Type 056/056A Jiangdao-class",
+      "category": "輕型巡防艦",
+      "subcategory": "Type 056A",
+      "quantity": 50,
+      "introduced": 2013,
+      "specs": {
+        "排水量_噸": 1500,
+        "全長_公尺": 89,
+        "最大航速_節": 28,
+        "主要武器": "YJ-83, HQ-10, YU-7"
+      },
+      "deployment": [
+        {"base_zh": "多港 (部分轉海警)", "base_en": "Multi-ports (some to CCG)", "lat": 27.5, "lng": 120.0, "theater": "三大艦隊"}
+      ],
+      "sources": [
+        "IISS, The Military Balance 2024, p. 267",
+        "Janes Fighting Ships, Type 056/056A (Jiangdao) entry",
+        "ONI, China Naval Forces (2020), p. 26",
+        "DoD CMPR 2024, p. 57"
+      ]
+    },
+    {
+      "id": "plan-ssbn-094",
+      "name_zh": "094/094A 型戰略核潛艦 (晉級)",
+      "name_en": "Type 094/094A Jin-class SSBN",
+      "category": "戰略核潛艦",
+      "subcategory": "SSBN",
+      "quantity": 6,
+      "introduced": 2007,
+      "specs": {
+        "排水量_噸": 11000,
+        "全長_公尺": 135,
+        "最大下潛深度_公尺": 300,
+        "主要武器": "12 × JL-2 / JL-3 潛射彈道飛彈",
+        "反應爐": "壓水式核反應爐"
+      },
+      "deployment": [
+        {"base_zh": "三亞榆林 (龍坡潛艦基地)", "base_en": "Longpo (Yulin) Submarine Base", "lat": 18.2, "lng": 109.69, "theater": "南部戰區海軍"}
+      ],
+      "sources": [
+        "IISS, The Military Balance 2024, p. 264",
+        "Kristensen & Korda (2024). Chinese Nuclear Weapons. Bulletin of the Atomic Scientists [FAS Nuclear Notebook]",
+        "Lewis, J. W., & Xue Litai (2014). China's Strategic Seapower. Stanford UP, pp. 201-215",
+        "DoD CMPR 2024, p. 57, p. 92"
+      ]
+    },
+    {
+      "id": "plan-ssn-093",
+      "name_zh": "093/093A/093B 型攻擊核潛艦 (商級)",
+      "name_en": "Type 093 Shang-class SSN",
+      "category": "攻擊核潛艦",
+      "subcategory": "SSN",
+      "quantity": 6,
+      "introduced": 2006,
+      "specs": {
+        "排水量_噸": 7000,
+        "全長_公尺": 110,
+        "最大下潛深度_公尺": 400,
+        "主要武器": "YJ-18 潛射反艦飛彈、YU-6 魚雷；093B 具 VLS 可發射 CJ-10"
+      },
+      "deployment": [
+        {"base_zh": "三亞榆林", "base_en": "Yulin NB", "lat": 18.2, "lng": 109.69, "theater": "南部戰區海軍"},
+        {"base_zh": "青島 (姜戈莊)", "base_en": "Jianggezhuang NB", "lat": 36.27, "lng": 120.65, "theater": "北部戰區海軍"}
+      ],
+      "sources": [
+        "IISS, The Military Balance 2024, p. 264",
+        "ONI, China Naval Forces (2020), pp. 16-18",
+        "DoD CMPR 2024, p. 57"
+      ]
+    },
+    {
+      "id": "plan-ssk-039",
+      "name_zh": "039A/B/C 型柴電潛艦 (元級)",
+      "name_en": "Type 039A/B/C Yuan-class SSP",
+      "category": "柴電潛艦",
+      "subcategory": "AIP-SSP",
+      "quantity": 25,
+      "introduced": 2006,
+      "specs": {
+        "排水量_噸": 3600,
+        "全長_公尺": 77.6,
+        "推進": "柴電 + AIP 史特林機",
+        "主要武器": "YJ-18, YU-6"
+      },
+      "deployment": [
+        {"base_zh": "湛江", "base_en": "Zhanjiang", "lat": 21.27, "lng": 110.36, "theater": "南部戰區海軍"},
+        {"base_zh": "寧波", "base_en": "Ningbo", "lat": 29.87, "lng": 121.55, "theater": "東部戰區海軍"}
+      ],
+      "sources": [
+        "IISS, The Military Balance 2024, p. 264",
+        "Janes Fighting Ships, Type 039A/B (Yuan-class) entry",
+        "ONI, China Naval Forces (2020), p. 18",
+        "DoD CMPR 2024, p. 57"
+      ]
+    },
+    {
+      "id": "plan-lhd-075",
+      "name_zh": "075 型兩棲突擊艦 (玉申級)",
+      "name_en": "Type 075 Yushen-class LHD",
+      "category": "兩棲突擊艦",
+      "subcategory": "Type 075 LHD",
+      "quantity": 3,
+      "introduced": 2021,
+      "specs": {
+        "排水量_噸": 40000,
+        "全長_公尺": 232,
+        "最大航速_節": 23,
+        "艦載機": 28,
+        "陸戰隊載量": 1000,
+        "裝甲車": 30,
+        "氣墊登陸艇": "4 艘 726 型"
+      },
+      "deployment": [
+        {"base_zh": "三亞 / 湛江", "base_en": "Sanya / Zhanjiang", "lat": 21.27, "lng": 110.36, "theater": "南部戰區海軍"}
+      ],
+      "sources": [
+        "IISS, The Military Balance 2024, p. 266",
+        "Janes Fighting Ships, Type 075 (Yushen) entry",
+        "DoD CMPR 2024, p. 57",
+        "Wuthnow et al. (2021). The PLA Beyond Borders, pp. 245-248"
+      ]
+    },
+    {
+      "id": "plan-lpd-071",
+      "name_zh": "071 型船塢登陸艦 (玉昭級)",
+      "name_en": "Type 071 Yuzhao-class LPD",
+      "category": "兩棲船塢登陸艦",
+      "subcategory": "Type 071 LPD",
+      "quantity": 8,
+      "introduced": 2007,
+      "specs": {
+        "排水量_噸": 25000,
+        "全長_公尺": 210,
+        "陸戰隊載量": 800,
+        "裝甲車": "15-20",
+        "氣墊登陸艇": 4
+      },
+      "deployment": [
+        {"base_zh": "湛江", "base_en": "Zhanjiang", "lat": 21.2707, "lng": 110.3594, "theater": "南部戰區海軍"}
+      ],
+      "sources": [
+        "IISS, The Military Balance 2024, p. 266",
+        "Janes Fighting Ships, Type 071 (Yuzhao) entry",
+        "ONI, The PLA Navy (2015), pp. 35-37",
+        "DoD CMPR 2024, p. 57"
+      ]
+    },
+    {
+      "id": "plan-j15",
+      "name_zh": "殲-15 艦載戰鬥機",
+      "name_en": "Shenyang J-15 Flying Shark",
+      "category": "艦載戰鬥機",
+      "subcategory": "4.5 代多用途",
+      "quantity": 60,
+      "introduced": 2013,
+      "specs": {
+        "最大速度_馬赫": 2.4,
+        "最大航程_公里": 3500,
+        "作戰半徑_公里": 1200,
+        "主要武器": "PL-15, PL-10, YJ-83K, KD-88",
+        "外掛點": 12
+      },
+      "deployment": [
+        {"base_zh": "遼寧艦 / 山東艦 海軍艦載航空兵", "base_en": "CV-16/17 air wing", "lat": 36.07, "lng": 120.38, "theater": "艦載"}
+      ],
+      "sources": [
+        "IISS, The Military Balance 2024, p. 265",
+        "Janes All the World's Aircraft, J-15 entry",
+        "O'Brien & Erickson (2019), pp. 203-210",
+        "DoD CMPR 2024, p. 63"
+      ]
+    },
+    {
+      "id": "plan-h6j",
+      "name_zh": "轟-6J 海軍轟炸機",
+      "name_en": "Xian H-6J",
+      "category": "反艦轟炸機",
+      "subcategory": "中型轟炸機",
+      "quantity": 30,
+      "introduced": 2018,
+      "specs": {
+        "最大速度_公里每小時": 1050,
+        "作戰半徑_公里": 3500,
+        "主要武器": "6 × YJ-12 或 YJ-83K"
+      },
+      "deployment": [
+        {"base_zh": "海南陵水", "base_en": "Lingshui AB", "lat": 18.51, "lng": 110.05, "theater": "南部戰區海軍航空兵"}
+      ],
+      "sources": [
+        "IISS, The Military Balance 2024, p. 266",
+        "Janes All the World's Aircraft, H-6J entry",
+        "DoD CMPR 2024, pp. 62-63"
+      ]
+    }
+  ]
+}
