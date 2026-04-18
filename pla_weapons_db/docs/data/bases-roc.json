@@ -1,0 +1,43 @@
+{
+  "country": {
+    "id": "roc",
+    "name_zh": "中華民國（臺灣）",
+    "name_en": "Republic of China (Taiwan / ROC)",
+    "color": "#1565c0",
+    "icon": "🇹🇼"
+  },
+  "bases": [
+    {"id":"roc-mnd","name_zh":"國防部","name_en":"Ministry of National Defense","service":"國防部","type":"national_hq","tier":1,"city_zh":"臺北大直","lat":25.0836,"lng":121.5536,"notes":"博愛營區","sources":["中華民國國防部《112年國防報告書》","IISS Military Balance 2024"]},
+    {"id":"roc-gsc","name_zh":"參謀本部","name_en":"General Staff HQ","service":"參謀本部","type":"national_hq","tier":1,"city_zh":"臺北大直","lat":25.0830,"lng":121.5530,"sources":["《112年國防報告書》"]},
+    {"id":"roc-army-hq","name_zh":"陸軍司令部","name_en":"ROC Army Command","service":"陸軍","type":"service_hq","tier":1,"city_zh":"桃園龍潭","lat":24.8640,"lng":121.2160,"sources":["《112年國防報告書》, 頁 44","IISS Military Balance 2024"]},
+    {"id":"roc-army-6","name_zh":"陸軍第六軍團","name_en":"6th Army Corps","service":"陸軍","type":"army_garrison","tier":2,"city_zh":"桃園龍潭","lat":24.8640,"lng":121.2160,"notes":"北部防衛","sources":["《112年國防報告書》"]},
+    {"id":"roc-army-8","name_zh":"陸軍第八軍團","name_en":"8th Army Corps","service":"陸軍","type":"army_garrison","tier":2,"city_zh":"高雄鳳山","lat":22.6270,"lng":120.3590,"notes":"南部防衛","sources":["《112年國防報告書》"]},
+    {"id":"roc-army-10","name_zh":"陸軍第十軍團","name_en":"10th Army Corps","service":"陸軍","type":"army_garrison","tier":2,"city_zh":"臺中新社","lat":24.1830,"lng":120.8040,"notes":"中部防衛","sources":["《112年國防報告書》"]},
+    {"id":"roc-army-huadong","name_zh":"花東防衛指揮部","name_en":"Huadong Defense Command","service":"陸軍","type":"army_garrison","tier":2,"city_zh":"花蓮","lat":23.9770,"lng":121.6040,"notes":"花東防衛","sources":["《112年國防報告書》"]},
+    {"id":"roc-army-kinmen","name_zh":"金門防衛指揮部","name_en":"Kinmen Defense Command","service":"陸軍","type":"island_garrison","tier":2,"city_zh":"金門","lat":24.4490,"lng":118.3770,"notes":"距廈門僅 10 km","sources":["《112年國防報告書》","IISS Military Balance 2024"]},
+    {"id":"roc-army-matsu","name_zh":"馬祖防衛指揮部","name_en":"Matsu Defense Command","service":"陸軍","type":"island_garrison","tier":2,"city_zh":"馬祖南竿","lat":26.1550,"lng":119.9330,"notes":"距中國大陸約 20 km","sources":["《112年國防報告書》","IISS Military Balance 2024"]},
+    {"id":"roc-army-penghu","name_zh":"澎湖防衛指揮部","name_en":"Penghu Defense Command","service":"陸軍","type":"island_garrison","tier":2,"city_zh":"澎湖馬公","lat":23.5660,"lng":119.5870,"notes":"臺海中繼","sources":["《112年國防報告書》"]},
+
+    {"id":"roc-navy-hq","name_zh":"海軍司令部","name_en":"ROC Navy Command","service":"海軍","type":"service_hq","tier":1,"city_zh":"高雄左營","lat":22.6990,"lng":120.2860,"sources":["《112年國防報告書》, 頁 48","IISS Military Balance 2024"]},
+    {"id":"roc-navy-zuoying","name_zh":"左營軍港","name_en":"Zuoying Naval Base","service":"海軍","type":"naval_base","tier":1,"city_zh":"高雄左營","lat":22.7000,"lng":120.2830,"notes":"海軍主港；基德級、成功級、沱江級母港","sources":["IISS Military Balance 2024","ONI"]},
+    {"id":"roc-navy-keelung","name_zh":"基隆軍港","name_en":"Keelung Naval Base","service":"海軍","type":"naval_base","tier":2,"city_zh":"基隆","lat":25.1330,"lng":121.7400,"notes":"北部防禦；部分巡防艦、飛彈快艇","sources":["IISS Military Balance 2024"]},
+    {"id":"roc-navy-suao","name_zh":"蘇澳軍港","name_en":"Suao Naval Base","service":"海軍","type":"naval_base","tier":2,"city_zh":"宜蘭蘇澳","lat":24.5940,"lng":121.8700,"notes":"潛艦母港（劍龍級）；面向太平洋","sources":["IISS Military Balance 2024","ONI"]},
+    {"id":"roc-navy-makung","name_zh":"馬公軍港","name_en":"Makung Naval Base","service":"海軍","type":"naval_base","tier":2,"city_zh":"澎湖馬公","lat":23.5640,"lng":119.5780,"notes":"飛彈快艇、巡邏艦","sources":["IISS Military Balance 2024"]},
+    {"id":"roc-marines-hq","name_zh":"海軍陸戰隊指揮部","name_en":"ROC Marine Corps Command","service":"海軍陸戰隊","type":"service_hq","tier":2,"city_zh":"高雄左營","lat":22.6950,"lng":120.2900,"sources":["《112年國防報告書》"]},
+
+    {"id":"roc-af-hq","name_zh":"空軍司令部","name_en":"ROC Air Force Command","service":"空軍","type":"service_hq","tier":1,"city_zh":"臺北大直","lat":25.0820,"lng":121.5520,"sources":["《112年國防報告書》, 頁 46","IISS Military Balance 2024"]},
+    {"id":"roc-af-hsinchu","name_zh":"新竹空軍基地","name_en":"Hsinchu Air Base","service":"空軍","type":"air_base","tier":2,"city_zh":"新竹","lat":24.8180,"lng":120.9390,"notes":"幻象 2000-5 (Mirage)；第 2 戰術戰鬥機聯隊","sources":["IISS Military Balance 2024","Janes All the World's Aircraft"]},
+    {"id":"roc-af-chiayi","name_zh":"嘉義空軍基地","name_en":"Chiayi Air Base","service":"空軍","type":"air_base","tier":2,"city_zh":"嘉義水上","lat":23.4610,"lng":120.3830,"notes":"F-16V Block 20 升級；第 4 戰術戰鬥機聯隊","sources":["IISS Military Balance 2024","Janes"]},
+    {"id":"roc-af-tainan","name_zh":"臺南空軍基地","name_en":"Tainan Air Base","service":"空軍","type":"air_base","tier":2,"city_zh":"臺南","lat":22.9500,"lng":120.2060,"notes":"IDF 經國號 (F-CK-1C/D)；第 1 戰術戰鬥機聯隊","sources":["IISS Military Balance 2024","Janes"]},
+    {"id":"roc-af-hualien","name_zh":"花蓮佳山基地","name_en":"Hualien/Jiashan Air Base","service":"空軍","type":"air_base","tier":1,"city_zh":"花蓮","lat":24.0230,"lng":121.6180,"notes":"洞庫基地 (抗炸山洞); F-16V; 第 5 戰術戰鬥機聯隊","sources":["IISS Military Balance 2024","Janes","CSIS"]},
+    {"id":"roc-af-taitung","name_zh":"臺東志航基地","name_en":"Taitung/Zhihang Air Base","service":"空軍","type":"air_base","tier":2,"city_zh":"臺東","lat":22.7930,"lng":121.1810,"notes":"IDF / F-5E；第 7 戰術戰鬥機聯隊","sources":["IISS Military Balance 2024"]},
+    {"id":"roc-af-cck","name_zh":"清泉崗空軍基地","name_en":"CCK/Taichung Air Base","service":"空軍","type":"air_base","tier":2,"city_zh":"臺中","lat":24.2640,"lng":120.6210,"notes":"IDF；第 3 戰術戰鬥機聯隊","sources":["IISS Military Balance 2024"]},
+    {"id":"roc-af-pingtung","name_zh":"屏東空軍基地","name_en":"Pingtung Air Base","service":"空軍","type":"air_base","tier":2,"city_zh":"屏東","lat":22.7000,"lng":120.4820,"notes":"P-3C 反潛機；C-130 運輸；第 6 混合聯隊","sources":["IISS Military Balance 2024"]},
+    {"id":"roc-af-songshan","name_zh":"松山空軍基地","name_en":"Songshan Air Base","service":"空軍","type":"air_base","tier":3,"city_zh":"臺北松山","lat":25.0690,"lng":121.5520,"notes":"VIP 專機、行政運輸","sources":["IISS Military Balance 2024"]},
+    {"id":"roc-af-kangshan","name_zh":"岡山空軍基地","name_en":"Kangshan Air Base","service":"空軍","type":"air_base","tier":3,"city_zh":"高雄岡山","lat":22.7840,"lng":120.2630,"notes":"空軍官校、T-5 勇鷹教練機","sources":["《112年國防報告書》"]},
+    {"id":"roc-af-f16v","name_zh":"臺東志航 (F-16V 新機隊)","name_en":"Taitung (F-16V New Block 70)","service":"空軍","type":"air_base","tier":2,"city_zh":"臺東","lat":22.7930,"lng":121.1810,"notes":"66 架全新 F-16V Block 70 (2026 起交付)","sources":["IISS Military Balance 2024","DoD DSCA Notice 2019"]},
+
+    {"id":"roc-missile-cmd","name_zh":"飛彈指揮部","name_en":"Missile Command","service":"飛彈","type":"missile_hq","tier":1,"city_zh":"臺北 (確切位置保密)","lat":25.05,"lng":121.50,"notes":"統轄天弓、雄風、萬劍、雲峰各飛彈系統","sources":["《112年國防報告書》, 頁 50","IISS Military Balance 2024"]},
+    {"id":"roc-missile-jiupeng","name_zh":"九鵬飛彈試射場","name_en":"Jiupeng Missile Test Range","service":"飛彈","type":"test_facility","tier":2,"city_zh":"屏東九鵬","lat":22.0770,"lng":120.8500,"notes":"中科院飛彈試射; 雄風三、天弓三測試","sources":["NCSIST 公開資訊","CSIS Missile Threat"]}
+  ]
+}
