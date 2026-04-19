@@ -6,7 +6,7 @@
 <title>PLA 武器裝備資料庫 | 中共解放軍五大軍種裝備</title>
 <meta name="description" content="中國人民解放軍各軍種主要武器系統資料庫。資料引用 IISS Military Balance、Janes、DoD CMPR、FAS Nuclear Notebook、CSIS Missile Threat。">
 <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" />
-<link rel="stylesheet" href="assets/styles.css?v=2.0.0">
+<link rel="stylesheet" href="assets/styles.css?v=2.1.0">
 </head>
 <body>
 
@@ -28,6 +28,7 @@
     <button class="tab" data-tab="plaaf">✈️ 空軍</button>
     <button class="tab" data-tab="plarf">🚀 火箭軍</button>
     <button class="tab" data-tab="plaisf">🛰️ 資訊支援</button>
+    <button class="tab" data-tab="bases">🏗️ 軍事基地</button>
     <button class="tab" data-tab="trends">📈 趨勢</button>
     <button class="tab" data-tab="map">🗺️ 部署地圖</button>
     <button class="tab" data-tab="sources">📚 來源</button>
@@ -62,6 +63,24 @@
   <section class="view hidden" id="view-plaaf"> <div class="branch-body" data-branch="plaaf"></div></section>
   <section class="view hidden" id="view-plarf"> <div class="branch-body" data-branch="plarf"></div></section>
   <section class="view hidden" id="view-plaisf"><div class="branch-body" data-branch="plaisf"></div></section>
+
+  <!-- BASES -->
+  <section class="view hidden" id="view-bases">
+    <div class="panel">
+      <h3 class="panel-title">🏗️ 軍事基地資料庫 (146 筆)</h3>
+      <p class="body-text">含 PLA、中華民國國軍、美軍印太、日本自衛隊、韓國、澳洲、菲律賓。按國家/軍種分層，支援搜尋篩選與地圖標記。</p>
+    </div>
+    <div class="toolbar">
+      <div class="search-wrap">
+        <span class="ico">🔍</span>
+        <input type="search" id="bases-search" placeholder="搜尋基地 (中文 / 英文 / 城市)">
+      </div>
+      <select id="bases-country-filter"><option value="">全部國家</option></select>
+      <select id="bases-type-filter"><option value="">全部類型</option></select>
+      <span class="result-count" id="bases-count"></span>
+    </div>
+    <div class="equip-grid" id="bases-grid"></div>
+  </section>
 
   <!-- TRENDS -->
   <section class="view hidden" id="view-trends">
@@ -152,6 +171,6 @@
 
 <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.1/dist/chart.umd.min.js"></script>
-<script src="assets/app.js?v=2.0.0"></script>
+<script src="assets/app.js?v=2.1.0"></script>
 </body>
 </html>

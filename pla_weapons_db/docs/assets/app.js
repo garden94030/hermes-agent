@@ -1,10 +1,12 @@
-/* PLA Weapons Dashboard v2.0.0 — aligned with styles.css class conventions */
+/* PLA Weapons Dashboard v2.1.0 — bases + equipment */
 (function () {
   'use strict';
 
   const STATE = {
     index: null,
     branches: {},
+    basesIndex: null,
+    allBases: [],
     trends: null,
     charts: {},
     map: null,
@@ -18,7 +20,7 @@
 
   /* ---------- DATA ---------- */
   async function loadJSON(path) {
-    const r = await fetch(path + '?v=2.0.0');
+    const r = await fetch(path + '?v=2.1.0');
     if (!r.ok) throw new Error('fetch ' + path + ' → ' + r.status);
     return r.json();
   }
@@ -29,8 +31,27 @@
         const d = await loadJSON(svc.file);
         STATE.branches[svc.id] = { meta: svc, ...d };
       }),
-      loadJSON(STATE.index.trends_file).then(d => STATE.trends = d)
+      loadJSON(STATE.index.trends_file).then(d => STATE.trends = d),
+      loadBasesData()
     ]);
+  }
+
+  async function loadBasesData() {
+    STATE.basesIndex = await loadJSON('data/bases-index.json');
+    const all = [];
+    for (const f of STATE.basesIndex.files) {
+      const d = await loadJSON(f.file);
+      if (d.bases) {
+        const cInfo = d.country || {};
+        d.bases.forEach(b => { b._country = cInfo; all.push(b); });
+      }
+      if (d.countries) {
+        d.countries.forEach(c => {
+          (c.bases || []).forEach(b => { b._country = c; all.push(b); });
+        });
+      }
+    }
+    STATE.allBases = all;
   }
 
   /* ---------- HEADER ---------- */
@@ -44,6 +65,7 @@
       <span class="stat-chip">${total} 裝備系統</span>
       <span class="stat-chip">${STATE.index.services.length} 軍種</span>
       <span class="stat-chip">${srcSet.size} 專業引用</span>
+      <span class="stat-chip">${STATE.allBases.length} 軍事基地</span>
     `;
   }
 
@@ -299,6 +321,132 @@
       });
       legend.appendChild(item);
     });
+
+    const countryGroups = {};
+    STATE.allBases.forEach(b => {
+      if (b.lat == null || b.lng == null) return;
+      const cid = b._country?.id || 'unknown';
+      if (!countryGroups[cid]) countryGroups[cid] = { info: b._country, group: L.layerGroup() };
+      const tl = STATE.basesIndex?.type_labels || {};
+      const r = b.tier === 1 ? 8 : 5;
+      const shape = ['missile_base','missile_brigade','missile_silo'].includes(b.type) ? 'diamond' : 'circle';
+      const marker = shape === 'diamond'
+        ? L.marker([b.lat, b.lng], { icon: L.divIcon({ className: '', html: `<div style="width:12px;height:12px;background:${b._country?.color||'#666'};transform:rotate(45deg);border:1.5px solid #fff;opacity:.9"></div>`, iconSize: [12,12], iconAnchor: [6,6] }) })
+        : L.circleMarker([b.lat, b.lng], { radius: r, color: '#fff', weight: 1.5, fillColor: b._country?.color || '#666', fillOpacity: 0.85 });
+      marker.bindPopup(`
+        <div><b>${esc(b.name_zh)}</b></div>
+        <div>${esc(b.name_en || '')}</div>
+        <hr style="border-color:#2a3a52;margin:6px 0">
+        <div><b>國家：</b>${b._country?.icon||''} ${esc(b._country?.name_zh||'')}</div>
+        <div><b>類型：</b>${esc(tl[b.type] || b.type)}</div>
+        ${b.service ? `<div><b>軍種：</b>${esc(b.service)}</div>` : ''}
+        ${b.notes ? `<div><b>備註：</b>${esc(b.notes)}</div>` : ''}
+      `);
+      marker.addTo(countryGroups[cid].group);
+    });
+    Object.entries(countryGroups).forEach(([cid, { info, group }]) => {
+      group.addTo(STATE.map);
+      STATE.mapLayers['base-' + cid] = group;
+      const item = document.createElement('span');
+      item.className = 'item';
+      item.innerHTML = `<span class="dot" style="background:${info?.color||'#666'}"></span>${info?.icon||'📍'} ${esc(info?.name_zh?.split('（')[0] || cid)} 基地`;
+      item.addEventListener('click', () => {
+        const on = STATE.map.hasLayer(group);
+        if (on) { STATE.map.removeLayer(group); item.classList.add('off'); }
+        else { group.addTo(STATE.map); item.classList.remove('off'); }
+      });
+      legend.appendChild(item);
+    });
+  }
+
+  /* ---------- BASES ---------- */
+  let basesInited = false;
+  function renderBases() {
+    if (basesInited) return;
+    basesInited = true;
+    const countries = Array.from(new Set(STATE.allBases.map(b => b._country?.id))).filter(Boolean);
+    const types = Array.from(new Set(STATE.allBases.map(b => b.type))).filter(Boolean).sort();
+    const tl = STATE.basesIndex?.type_labels || {};
+    const cSel = $('#bases-country-filter');
+    countries.forEach(cid => {
+      const sample = STATE.allBases.find(b => b._country?.id === cid);
+      const o = document.createElement('option');
+      o.value = cid; o.textContent = (sample?._country?.icon || '') + ' ' + (sample?._country?.name_zh || cid);
+      cSel.appendChild(o);
+    });
+    const tSel = $('#bases-type-filter');
+    types.forEach(t => {
+      const o = document.createElement('option');
+      o.value = t; o.textContent = tl[t] || t;
+      tSel.appendChild(o);
+    });
+    paintBases();
+    $('#bases-search').addEventListener('input', paintBases);
+    cSel.addEventListener('change', paintBases);
+    tSel.addEventListener('change', paintBases);
+  }
+  function paintBases() {
+    const q = ($('#bases-search')?.value || '').trim().toLowerCase();
+    const cFilt = $('#bases-country-filter')?.value || '';
+    const tFilt = $('#bases-type-filter')?.value || '';
+    const tl = STATE.basesIndex?.type_labels || {};
+    const list = STATE.allBases.filter(b => {
+      if (cFilt && b._country?.id !== cFilt) return false;
+      if (tFilt && b.type !== tFilt) return false;
+      if (!q) return true;
+      return [b.name_zh, b.name_en, b.city_zh, b.service, b.theater, b.notes].join(' ').toLowerCase().includes(q);
+    });
+    $('#bases-count').textContent = `顯示 ${list.length} / ${STATE.allBases.length}`;
+    const grid = $('#bases-grid');
+    if (!list.length) { grid.innerHTML = '<div class="empty"><div class="empty-icon">∅</div>無符合條件之基地</div>'; return; }
+    grid.innerHTML = list.map(b => {
+      const color = b._country?.color || '#666';
+      const icon = b._country?.icon || '📍';
+      return `
+        <div class="equip-card" data-base-id="${esc(b.id)}" style="cursor:pointer">
+          <div class="accent" style="background:${color}"></div>
+          <div class="ec-head"><div>
+            <div class="ec-title">${esc(b.name_zh)}</div>
+            <div class="ec-sub">${esc(b.name_en || '')}</div>
+          </div></div>
+          <div class="tag-row">
+            <span class="tag">${icon} ${esc(b._country?.name_zh?.split('（')[0] || '')}</span>
+            <span class="tag">${esc(tl[b.type] || b.type)}</span>
+            ${b.service ? `<span class="tag">${esc(b.service)}</span>` : ''}
+            ${b.tier === 1 ? '<span class="tag year">★ 核心</span>' : ''}
+            ${b.theater ? `<span class="tag">${esc(b.theater)}</span>` : ''}
+          </div>
+          ${b.city_zh ? `<div style="font-size:.78rem;color:#9ba7b8;margin-top:6px">📍 ${esc(b.city_zh)}</div>` : ''}
+        </div>`;
+    }).join('');
+    $$('[data-base-id]', grid).forEach(card => {
+      card.addEventListener('click', () => openBaseModal(card.dataset.baseId));
+    });
+  }
+  function openBaseModal(baseId) {
+    const b = STATE.allBases.find(x => x.id === baseId);
+    if (!b) return;
+    const tl = STATE.basesIndex?.type_labels || {};
+    const color = b._country?.color || '#666';
+    const srcs = (b.sources || []).map(s => `<li>${esc(s)}</li>`).join('');
+    $('#modal-body').innerHTML = `
+      <div style="border-left:4px solid ${color};padding-left:12px;margin-bottom:14px">
+        <small style="color:${color};font-weight:600">${b._country?.icon || ''} ${esc(b._country?.name_zh || '')} · ${esc(tl[b.type] || b.type)}</small>
+        <h2>${esc(b.name_zh)}</h2>
+        <div class="en-name">${esc(b.name_en || '')}</div>
+      </div>
+      <div class="modal-meta">
+        ${b.service ? `<span class="chip">🎖 ${esc(b.service)}</span>` : ''}
+        ${b.tier ? `<span class="chip">⭐ Tier ${b.tier}</span>` : ''}
+        ${b.theater ? `<span class="chip">🗺️ ${esc(b.theater)}</span>` : ''}
+        ${b.city_zh ? `<span class="chip">📍 ${esc(b.city_zh)}</span>` : ''}
+      </div>
+      ${b.lat != null ? `<h4 class="section">座標</h4><div class="spec-grid"><div class="spec-item"><div class="k">緯度</div><div class="v">${b.lat.toFixed(4)}</div></div><div class="spec-item"><div class="k">經度</div><div class="v">${b.lng.toFixed(4)}</div></div></div>` : ''}
+      ${b.notes ? `<h4 class="section">備註</h4><p style="font-size:.88rem;color:#ccc;padding:8px 0">${esc(b.notes)}</p>` : ''}
+      ${srcs ? `<h4 class="section">引用來源 (${b.sources.length})</h4><ul class="source-list">${srcs}</ul>` : ''}
+    `;
+    $('#overlay').classList.add('open');
+    document.body.style.overflow = 'hidden';
   }
 
   /* ---------- TABS ---------- */
@@ -308,6 +456,7 @@
     $$('.view').forEach(v => v.classList.toggle('hidden', v.id !== 'view-' + id));
     window.scrollTo({ top: 0, behavior: 'smooth' });
     if (['plaa','plan','plaaf','plarf','plaisf'].includes(id)) renderBranch(id);
+    if (id === 'bases') renderBases();
     if (id === 'trends') renderTrends();
     if (id === 'map') setTimeout(renderMap, 60);
   }
