@@ -1,0 +1,62 @@
+{
+  "countries": [
+    {
+      "id": "jp",
+      "name_zh": "日本（自衛隊）",
+      "name_en": "Japan (JSDF)",
+      "color": "#b71c1c",
+      "icon": "🇯🇵",
+      "bases": [
+        {"id":"jp-naha","name_zh":"那霸基地","name_en":"Naha Air Base","service":"航空自衛隊","type":"air_base","tier":1,"city_zh":"沖繩那霸","lat":26.1958,"lng":127.6461,"notes":"西南航空方面隊 HQ; F-15J 對中緊急升空前線","sources":["JASDF 官網","IISS Military Balance 2024"]},
+        {"id":"jp-miyako","name_zh":"宮古島駐屯地","name_en":"JGSDF Camp Miyako","service":"陸上自衛隊","type":"missile_base","tier":1,"city_zh":"沖繩宮古島","lat":24.7589,"lng":125.3139,"notes":"2019 年啟用；12 式 SSM + 03 式 SAM；封鎖宮古海峽","sources":["JGSDF","Stars and Stripes"]},
+        {"id":"jp-ishigaki","name_zh":"石垣駐屯地","name_en":"JGSDF Camp Ishigaki","service":"陸上自衛隊","type":"missile_base","tier":1,"city_zh":"沖繩石垣島","lat":24.3400,"lng":124.1550,"notes":"2023 年 3 月啟用；距釣魚台 200 km；12 式 SSM + 03 式 SAM","sources":["CNN 2023","CSIS AMTI"]},
+        {"id":"jp-yonaguni","name_zh":"與那國沿岸監視隊","name_en":"JGSDF Yonaguni Station","service":"陸上自衛隊","type":"radar_station","tier":1,"city_zh":"沖繩與那國島","lat":24.4680,"lng":123.0045,"notes":"日本最西端軍事據點；距臺 110 km；雷達 + 電戰升級","sources":["GlobalSecurity","Stars and Stripes"]},
+        {"id":"jp-amami","name_zh":"奄美駐屯地","name_en":"JGSDF Amami Garrison","service":"陸上自衛隊","type":"missile_base","tier":2,"city_zh":"鹿兒島奄美大島","lat":28.3833,"lng":129.5000,"notes":"2019 年啟用；SSM + SAM; 南西諸島防線","sources":["JGSDF","Stars and Stripes"]},
+        {"id":"jp-yokosuka-jmsdf","name_zh":"橫須賀海自基地","name_en":"JMSDF Yokosuka Naval Base","service":"海上自衛隊","type":"naval_base","tier":1,"city_zh":"神奈川橫須賀","lat":35.2900,"lng":139.6700,"notes":"自衛艦隊 HQ / 護衛艦隊 HQ; 宙斯盾艦母港","sources":["JMSDF","IISS Military Balance 2024"]},
+        {"id":"jp-kure","name_zh":"吳海自基地","name_en":"JMSDF Kure Naval Base","service":"海上自衛隊","type":"naval_base","tier":2,"city_zh":"廣島吳","lat":34.2293,"lng":132.5497,"notes":"潛水隊群; 歷史軍港","sources":["JMSDF"]},
+        {"id":"jp-sasebo-jmsdf","name_zh":"佐世保海自基地","name_en":"JMSDF Sasebo Naval Base","service":"海上自衛隊","type":"naval_base","tier":2,"city_zh":"長崎佐世保","lat":33.1610,"lng":129.7120,"notes":"距東海最近主要軍港","sources":["JMSDF"]},
+        {"id":"jp-maizuru","name_zh":"舞鶴海自基地","name_en":"JMSDF Maizuru Naval Base","service":"海上自衛隊","type":"naval_base","tier":2,"city_zh":"京都舞鶴","lat":35.4741,"lng":135.3706,"notes":"日本海面向；對俄朝","sources":["JMSDF"]},
+        {"id":"jp-chitose","name_zh":"千歲基地","name_en":"Chitose Air Base","service":"航空自衛隊","type":"air_base","tier":2,"city_zh":"北海道千歲","lat":42.7945,"lng":141.6660,"notes":"第 2 航空團 (F-15J); 對俄防空","sources":["JASDF"]},
+        {"id":"jp-tsuiki","name_zh":"築城基地","name_en":"Tsuiki Air Base","service":"航空自衛隊","type":"air_base","tier":2,"city_zh":"福岡築上","lat":33.6850,"lng":131.0400,"notes":"第 8 航空團 (F-2); 對東海 / 對馬海峽","sources":["JASDF"]},
+        {"id":"jp-komatsu","name_zh":"小松基地","name_en":"Komatsu Air Base","service":"航空自衛隊","type":"air_base","tier":2,"city_zh":"石川小松","lat":36.3934,"lng":136.4069,"notes":"第 6 航空團 (F-15J); 日本海面向","sources":["JASDF"]},
+        {"id":"jp-hyakuri","name_zh":"百里基地","name_en":"Hyakuri Air Base","service":"航空自衛隊","type":"air_base","tier":2,"city_zh":"茨城小美玉","lat":36.1812,"lng":140.4156,"notes":"第 7 航空團 (F-2); 首都圈防空","sources":["JASDF"]}
+      ]
+    },
+    {
+      "id": "kr",
+      "name_zh": "大韓民國國軍",
+      "name_en": "Republic of Korea Armed Forces",
+      "color": "#1b5e20",
+      "icon": "🇰🇷",
+      "bases": [
+        {"id":"kr-gyeryongdae","name_zh":"雞龍臺三軍本部","name_en":"Gyeryongdae Joint HQ","service":"三軍聯合","type":"national_hq","tier":1,"city_zh":"忠清南道雞龍","lat":36.3500,"lng":127.0500,"notes":"陸海空三軍司令部所在地 (1989-1993 遷入)","sources":["ROK MND","Wikipedia Gyeryong"]},
+        {"id":"kr-jinhae","name_zh":"鎮海海軍基地","name_en":"Jinhae Naval Base","service":"海軍","type":"naval_base","tier":1,"city_zh":"慶尚南道昌原","lat":35.1481,"lng":128.6338,"notes":"韓國艦隊 HQ; 共用美海軍 CFA Chinhae","sources":["GlobalSecurity","ROK Navy"]},
+        {"id":"kr-pyeongtaek","name_zh":"平澤海軍 (第二艦隊)","name_en":"Pyeongtaek Naval Base (2nd Fleet)","service":"海軍","type":"naval_base","tier":2,"city_zh":"京畿道平澤","lat":36.9600,"lng":126.9800,"notes":"第二艦隊 HQ; 西海面向中國","sources":["ROK Navy"]}
+      ]
+    },
+    {
+      "id": "au",
+      "name_zh": "澳洲國防軍",
+      "name_en": "Australian Defence Force",
+      "color": "#006064",
+      "icon": "🇦🇺",
+      "bases": [
+        {"id":"au-darwin","name_zh":"達爾文皇家空軍基地","name_en":"RAAF Base Darwin","service":"皇家澳空軍","type":"air_base","tier":1,"city_zh":"北領地達爾文","lat":-12.4088,"lng":130.8727,"notes":"美海陸達爾文輪調部隊 (~2,500 人); B-52 輪調擴建中","sources":["RAAF","ASPI Strategist"]},
+        {"id":"au-tindal","name_zh":"廷達爾皇家空軍基地","name_en":"RAAF Base Tindal","service":"皇家澳空軍","type":"air_base","tier":1,"city_zh":"北領地凱瑟琳","lat":-14.5197,"lng":132.3737,"notes":"美澳共同投資 $1B+; B-52 + KC-46 輪調","sources":["RAAF","ASPI","澳國防部"]},
+        {"id":"au-pinegap","name_zh":"松樹谷聯合國防設施","name_en":"Pine Gap (JDFPG)","service":"美澳聯合","type":"sigint_base","tier":1,"city_zh":"北領地愛麗絲泉","lat":-23.7990,"lng":133.7370,"notes":"美澳聯合 SIGINT / 衛星地面站; 導彈預警","sources":["ASD","澳國防部"]},
+        {"id":"au-stirling","name_zh":"HMAS 史特林 (艦隊西基地)","name_en":"HMAS Stirling (Fleet Base West)","service":"皇家澳海軍","type":"naval_base","tier":1,"city_zh":"西澳伯斯花園島","lat":-32.2047,"lng":115.6819,"notes":"AUKUS 核動力潛艦未來母港 (SRF-West); 美 4 + 英 1 艘 SSN (~2027)","sources":["Australian Submarine Agency","AUKUS 聲明"]}
+      ]
+    },
+    {
+      "id": "ph",
+      "name_zh": "菲律賓武裝部隊",
+      "name_en": "Armed Forces of the Philippines",
+      "color": "#4e342e",
+      "icon": "🇵🇭",
+      "bases": [
+        {"id":"ph-afp-gh","name_zh":"菲軍總部 (阿奎納多營)","name_en":"AFP General HQ (Camp Aguinaldo)","service":"三軍聯合","type":"national_hq","tier":1,"city_zh":"馬尼拉奎松","lat":14.6050,"lng":121.0600,"notes":"菲律賓武裝部隊總部","sources":["AFP 官網","Wikipedia Camp Aguinaldo"]},
+        {"id":"ph-navy-manila","name_zh":"菲海軍總部","name_en":"Philippine Navy HQ","service":"海軍","type":"service_hq","tier":1,"city_zh":"馬尼拉","lat":14.5780,"lng":120.9830,"notes":"羅哈斯大道；菲海軍司令部","sources":["Philippine Navy"]}
+      ]
+    }
+  ]
+}

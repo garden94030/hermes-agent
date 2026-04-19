@@ -1,0 +1,31 @@
+{
+  "country": {
+    "id": "us",
+    "name_zh": "美國（印太司令部）",
+    "name_en": "United States (INDOPACOM)",
+    "color": "#283593",
+    "icon": "🇺🇸"
+  },
+  "bases": [
+    {"id":"us-jbphh","name_zh":"珍珠港希肯聯合基地","name_en":"Joint Base Pearl Harbor-Hickam","service":"海軍/空軍","type":"joint_base","tier":1,"city_zh":"夏威夷","lat":21.3178,"lng":-157.9202,"notes":"USINDOPACOM / 太平洋艦隊 / 太平洋空軍司令部","sources":["MilitaryINSTALLATIONS","DoD Base Structure Report"]},
+    {"id":"us-yokosuka","name_zh":"橫須賀海軍基地","name_en":"US Fleet Activities Yokosuka","service":"海軍","type":"naval_base","tier":1,"city_zh":"日本神奈川橫須賀","lat":35.2932,"lng":139.6713,"notes":"第 7 艦隊母港；雷根號航艦 (CVN-76) 前進部署","sources":["DoD CMPR 2024","USN Pacific Fleet"]},
+    {"id":"us-kadena","name_zh":"嘉手納空軍基地","name_en":"Kadena Air Base","service":"空軍","type":"air_base","tier":1,"city_zh":"日本沖繩","lat":26.3517,"lng":127.7694,"notes":"太平洋最大空軍基地；距臺約 640 km；第 18 聯隊 F-15 → F-35A 過渡","sources":["DoD CMPR 2024","USAF PACAF","IISS Military Balance 2024"]},
+    {"id":"us-iwakuni","name_zh":"岩國海兵隊航空基地","name_en":"MCAS Iwakuni","service":"海陸","type":"air_base","tier":1,"city_zh":"日本山口岩國","lat":34.1397,"lng":132.2347,"notes":"F-35B (VMFA-121、VMFA-242); EA-18G 電戰機","sources":["DoD CMPR 2024","USMC"]},
+    {"id":"us-misawa","name_zh":"三澤空軍基地","name_en":"Misawa Air Base","service":"空軍","type":"air_base","tier":2,"city_zh":"日本青森三澤","lat":40.6667,"lng":141.3833,"notes":"第 35 戰鬥機聯隊 (F-16CM); SIGINT 樞紐","sources":["DoD CMPR 2024","USAF"]},
+    {"id":"us-sasebo","name_zh":"佐世保海軍基地","name_en":"US Fleet Activities Sasebo","service":"海軍","type":"naval_base","tier":2,"city_zh":"日本長崎佐世保","lat":33.1577,"lng":129.7068,"notes":"兩棲戰備群 (LHD/LPD); 獵雷艦","sources":["DoD CMPR 2024","USN"]},
+    {"id":"us-schwab","name_zh":"史瓦布營區","name_en":"Camp Schwab","service":"海陸","type":"marine_base","tier":2,"city_zh":"日本沖繩邊野古","lat":26.5246,"lng":128.0443,"notes":"第 3 海陸師駐地；FRF 替代設施興建中","sources":["DoD CMPR 2024","USMC"]},
+    {"id":"us-humphreys","name_zh":"漢弗瑞斯營區","name_en":"Camp Humphreys","service":"陸軍","type":"army_garrison","tier":1,"city_zh":"韓國平澤","lat":36.9667,"lng":127.0333,"notes":"USFK / 第 8 軍團 HQ；美軍海外最大基地","sources":["USFK","DoD"]},
+    {"id":"us-osan","name_zh":"烏山空軍基地","name_en":"Osan Air Base","service":"空軍","type":"air_base","tier":2,"city_zh":"韓國平澤","lat":37.0877,"lng":127.0245,"notes":"第 51 戰鬥機聯隊 (F-16C/D、A-10C); 第 7 空軍 HQ","sources":["USAF","DoD CMPR"]},
+    {"id":"us-kunsan","name_zh":"群山空軍基地","name_en":"Kunsan Air Base","service":"空軍","type":"air_base","tier":2,"city_zh":"韓國群山","lat":35.9038,"lng":126.6160,"notes":"第 8 戰鬥機聯隊「狼群」(F-16C/D); 西海岸面向黃海","sources":["USAF"]},
+    {"id":"us-andersen","name_zh":"安德森空軍基地","name_en":"Andersen Air Force Base","service":"空軍","type":"air_base","tier":1,"city_zh":"關島","lat":13.5753,"lng":144.9213,"notes":"第二島鏈核心；B-1B/B-2/B-52 輪調；太平洋威懾倡議擴建中","sources":["USAF","DoD Pacific Deterrence Initiative"]},
+    {"id":"us-guam-navy","name_zh":"關島海軍基地","name_en":"Naval Base Guam","service":"海軍","type":"naval_base","tier":1,"city_zh":"關島阿普拉港","lat":13.4400,"lng":144.6600,"notes":"攻擊核潛艦中隊；布拉茲營區 (海陸 5,000 人從沖繩移防)","sources":["USN Joint Region Marianas","DoD"]},
+    {"id":"us-diego","name_zh":"迪戈加西亞海軍支援基地","name_en":"NSF Diego Garcia","service":"海空","type":"joint_base","tier":1,"city_zh":"英屬印度洋領土","lat":-7.3133,"lng":72.4111,"notes":"轟炸機前進部署 (B-1/B-2/B-52); 海上預備船隊","sources":["USN","DoD"]},
+    {"id":"us-edca-basa","name_zh":"巴薩空軍基地 (EDCA)","name_en":"Cesar Basa Air Base (EDCA)","service":"空軍","type":"air_base","tier":2,"city_zh":"菲律賓呂宋邦板牙","lat":14.9867,"lng":120.4917,"notes":"EDCA 最大投資據點 (2023 累計 $66M)","sources":["USINDOPACOM","CSIS AMTI"]},
+    {"id":"us-edca-bautista","name_zh":"巴蒂斯塔空軍基地 (EDCA)","name_en":"Antonio Bautista Air Base (EDCA)","service":"空軍","type":"air_base","tier":2,"city_zh":"菲律賓巴拉望","lat":9.7421,"lng":118.7587,"notes":"距南沙群島最近；海域監視","sources":["USINDOPACOM","Philippine AF"]},
+    {"id":"us-edca-mactan","name_zh":"麥克坦基地 (EDCA)","name_en":"Mactan-Benito Ebuen Air Base (EDCA)","service":"空軍","type":"air_base","tier":3,"city_zh":"菲律賓宿霧","lat":10.3080,"lng":123.9763,"notes":"中菲律賓中繼","sources":["USINDOPACOM"]},
+    {"id":"us-edca-lumbia","name_zh":"隆比亞機場 (EDCA)","name_en":"Lumbia Airfield (EDCA)","service":"空軍","type":"air_base","tier":3,"city_zh":"菲律賓民答那峨","lat":8.4156,"lng":124.6110,"notes":"南部縱深","sources":["USINDOPACOM"]},
+    {"id":"us-edca-osias","name_zh":"奧西亞斯海軍基地 (EDCA)","name_en":"Naval Base Camilo Osias (EDCA)","service":"海軍","type":"naval_base","tier":1,"city_zh":"菲律賓呂宋卡加延","lat":18.5036,"lng":122.1489,"notes":"最北 EDCA；距臺 400 km；巴士海峽樞紐","sources":["USINDOPACOM 2023 announcement","USNI News"]},
+    {"id":"us-edca-lallo","name_zh":"拉洛機場 (EDCA)","name_en":"Lal-lo Airport (EDCA)","service":"空軍","type":"air_base","tier":2,"city_zh":"菲律賓呂宋卡加延","lat":18.1781,"lng":121.7425,"notes":"2023 新增；北呂宋面向巴士海峽","sources":["USINDOPACOM","USNI News"]},
+    {"id":"us-fort-magsaysay","name_zh":"馬格賽賽堡 (EDCA)","name_en":"Fort Magsaysay (EDCA)","service":"陸軍","type":"army_garrison","tier":2,"city_zh":"菲律賓呂宋","lat":15.4500,"lng":121.1000,"notes":"菲軍最大訓練區；「肩並肩」演習場","sources":["USINDOPACOM"]}
+  ]
+}

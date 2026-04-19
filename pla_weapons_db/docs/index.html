@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>PLA 武器裝備資料庫 | 中共解放軍五大軍種裝備</title>
+<meta name="description" content="中國人民解放軍各軍種主要武器系統資料庫。資料引用 IISS Military Balance、Janes、DoD CMPR、FAS Nuclear Notebook、CSIS Missile Threat。">
+<link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" />
+<link rel="stylesheet" href="assets/styles.css?v=2.1.0">
+</head>
+<body>
+
+<header class="site-header">
+  <div class="header-inner">
+    <div class="brand">
+      <span class="logo">🛡️</span>
+      <div>
+        <h1>PLA 武器裝備資料庫</h1>
+        <p class="subtitle">中共解放軍五大軍種主要武器 ‧ IISS / Janes / DoD CMPR / FAS / CSIS 引用</p>
+      </div>
+    </div>
+    <div class="header-stats" id="header-stats"></div>
+  </div>
+  <nav class="tab-nav" id="tab-nav">
+    <button class="tab active" data-tab="overview">📊 總覽</button>
+    <button class="tab" data-tab="plaa">🪖 陸軍</button>
+    <button class="tab" data-tab="plan">⚓ 海軍</button>
+    <button class="tab" data-tab="plaaf">✈️ 空軍</button>
+    <button class="tab" data-tab="plarf">🚀 火箭軍</button>
+    <button class="tab" data-tab="plaisf">🛰️ 資訊支援</button>
+    <button class="tab" data-tab="bases">🏗️ 軍事基地</button>
+    <button class="tab" data-tab="trends">📈 趨勢</button>
+    <button class="tab" data-tab="map">🗺️ 部署地圖</button>
+    <button class="tab" data-tab="sources">📚 來源</button>
+  </nav>
+</header>
+
+<main class="page">
+
+  <!-- OVERVIEW -->
+  <section class="view" id="view-overview">
+    <div class="card-row" id="branch-cards"></div>
+    <div class="grid-2">
+      <div class="panel">
+        <h3 class="panel-title">各軍種裝備數量</h3>
+        <canvas id="chart-branch"></canvas>
+      </div>
+      <div class="panel">
+        <h3 class="panel-title">近十年新增裝備 (2015+)</h3>
+        <canvas id="chart-recent"></canvas>
+      </div>
+    </div>
+    <div class="panel">
+      <h3 class="panel-title">資料說明</h3>
+      <p class="body-text">本資料庫依軍種分類整理 PLA 主要武器系統，融合公開部署座標、數量估計，以及專業出版品之來源引用。資料截至 <b>2024 年底</b>（DoD CMPR 2024 公布為準），原始資料權屬各發布機關。</p>
+      <p class="body-text">點擊上方分頁切換軍種；每張裝備卡片可展開詳細規格、部署位置與完整來源引用清單。支援 CSV 匯出以便離線分析。</p>
+    </div>
+  </section>
+
+  <!-- BRANCH VIEWS (dynamically populated) -->
+  <section class="view hidden" id="view-plaa">  <div class="branch-body" data-branch="plaa"></div></section>
+  <section class="view hidden" id="view-plan">  <div class="branch-body" data-branch="plan"></div></section>
+  <section class="view hidden" id="view-plaaf"> <div class="branch-body" data-branch="plaaf"></div></section>
+  <section class="view hidden" id="view-plarf"> <div class="branch-body" data-branch="plarf"></div></section>
+  <section class="view hidden" id="view-plaisf"><div class="branch-body" data-branch="plaisf"></div></section>
+
+  <!-- BASES -->
+  <section class="view hidden" id="view-bases">
+    <div class="panel">
+      <h3 class="panel-title">🏗️ 軍事基地資料庫 (146 筆)</h3>
+      <p class="body-text">含 PLA、中華民國國軍、美軍印太、日本自衛隊、韓國、澳洲、菲律賓。按國家/軍種分層，支援搜尋篩選與地圖標記。</p>
+    </div>
+    <div class="toolbar">
+      <div class="search-wrap">
+        <span class="ico">🔍</span>
+        <input type="search" id="bases-search" placeholder="搜尋基地 (中文 / 英文 / 城市)">
+      </div>
+      <select id="bases-country-filter"><option value="">全部國家</option></select>
+      <select id="bases-type-filter"><option value="">全部類型</option></select>
+      <span class="result-count" id="bases-count"></span>
+    </div>
+    <div class="equip-grid" id="bases-grid"></div>
+  </section>
+
+  <!-- TRENDS -->
+  <section class="view hidden" id="view-trends">
+    <div class="panel">
+      <h3 class="panel-title">中共軍力成長趨勢</h3>
+      <p class="body-text">實測值 (CMPR 歷年) vs 預測值 (CMPR 中程估計)。虛線為預測，實線為實測。</p>
+    </div>
+    <div id="trends-grid" class="grid-2"></div>
+  </section>
+
+  <!-- MAP -->
+  <section class="view hidden" id="view-map">
+    <div class="panel">
+      <h3 class="panel-title">武器部署地圖</h3>
+      <p class="body-text">按顏色區分軍種，按圖例可切換顯示。點擊標記可查看該武器系統之詳細資訊。</p>
+      <div class="map-legend" id="map-legend"></div>
+    </div>
+    <div id="map" class="map-container"></div>
+  </section>
+
+  <!-- SOURCES -->
+  <section class="view hidden" id="view-sources">
+    <div class="panel">
+      <h3 class="panel-title">🏛️ 專業來源總覽</h3>
+      <div class="source-grid">
+        <div>
+          <h4>智庫 (Think Tanks)</h4>
+          <ul>
+            <li><b>IISS</b> - International Institute for Strategic Studies<br><small>《The Military Balance》年度版</small></li>
+            <li><b>CSIS</b> - Center for Strategic and International Studies<br><small>China Power Project / Missile Defense Project</small></li>
+            <li><b>RAND</b> - RAND Corporation<br><small>中國軍事現代化研究</small></li>
+            <li><b>FAS</b> - Federation of American Scientists<br><small>Nuclear Notebook (Kristensen & Korda)</small></li>
+            <li><b>Project 2049</b> Institute<br><small>Stokes & Easton 等研究</small></li>
+            <li><b>SIPRI</b> - Stockholm International Peace Research Institute<br><small>Yearbook / Arms Transfers Database</small></li>
+            <li><b>ASPI</b> - Australian Strategic Policy Institute<br><small>ICPC Satellite Database</small></li>
+            <li><b>NTI</b> - Nuclear Threat Initiative</li>
+          </ul>
+        </div>
+        <div>
+          <h4>政府 / 官方報告</h4>
+          <ul>
+            <li><b>U.S. DoD</b> - 《中國軍力報告》(CMPR) 2020-2024</li>
+            <li><b>U.S. DIA</b> - China Military Power</li>
+            <li><b>U.S. ONI</b> - The PLA Navy / China Naval Forces</li>
+            <li><b>CASI</b> - China Aerospace Studies Institute</li>
+            <li><b>USCC</b> - U.S.-China Economic and Security Review Commission</li>
+            <li><b>中華民國國防部</b> - 《112 年國防報告書》</li>
+          </ul>
+        </div>
+        <div>
+          <h4>專業資料庫</h4>
+          <ul>
+            <li><b>Janes</b> - Fighting Ships / All the World's Aircraft / Land Warfare Platforms / Air-Launched Weapons</li>
+            <li><b>CSIS Missile Threat</b> - missilethreat.csis.org</li>
+          </ul>
+        </div>
+        <div>
+          <h4>學術專書</h4>
+          <ul>
+            <li>Blasko, D. J. (2012). <i>The Chinese Army Today</i> (2nd ed.). Routledge</li>
+            <li>Cole, B. D. (2016). <i>The Great Wall at Sea</i> (2nd ed.). Naval Institute Press</li>
+            <li>Fravel, M. T. (2019). <i>Active Defense</i>. Princeton UP</li>
+            <li>Lewis, J. W., & Xue Litai (2014). <i>China's Strategic Seapower</i>. Stanford UP</li>
+            <li>O'Brien & Erickson (eds.) (2019). <i>Chinese Aerospace Power</i>. Naval Institute Press</li>
+            <li>Erickson, A. S. (2013). <i>Chinese ASBM Development</i>. Jamestown Foundation</li>
+            <li>Saunders et al. (eds.) (2019). <i>Chairman Xi Remakes the PLA</i>. NDU Press</li>
+            <li>Wuthnow et al. (eds.) (2021). <i>The PLA Beyond Borders</i>. NDU Press</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
+</main>
+
+<footer class="site-footer">
+  <p>資料僅供學術研究參考 ‧ 資料截至 2024 年底 ‧ 原始資料權屬各發布機關</p>
+  <p>合併自 <a href="https://github.com/garden94030/pla-weapons-dashboard" target="_blank">garden94030/pla-weapons-dashboard</a> + hermes-agent PLA weapons DB</p>
+</footer>
+
+<!-- Equipment Modal -->
+<div class="overlay" id="overlay" onclick="closeModal(event)">
+  <div class="modal" id="modal">
+    <button class="modal-close" onclick="closeModal(null,true)" aria-label="Close">✕</button>
+    <div id="modal-body"></div>
+  </div>
+</div>
+
+<script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.1/dist/chart.umd.min.js"></script>
+<script src="assets/app.js?v=2.1.0"></script>
+</body>
+</html>

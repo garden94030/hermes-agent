@@ -1,0 +1,332 @@
+{
+  "service": {
+    "id": "plaaf",
+    "name_zh": "中國人民解放軍空軍",
+    "name_en": "People's Liberation Army Air Force (PLAAF)",
+    "headquarters": "北京",
+    "total_active_personnel_est": 395000,
+    "theaters": [
+      {"name_zh": "東部戰區空軍", "hq": "南京", "name_en": "Eastern Theater Air Force"},
+      {"name_zh": "南部戰區空軍", "hq": "廣州", "name_en": "Southern Theater Air Force"},
+      {"name_zh": "西部戰區空軍", "hq": "成都", "name_en": "Western Theater Air Force"},
+      {"name_zh": "北部戰區空軍", "hq": "瀋陽", "name_en": "Northern Theater Air Force"},
+      {"name_zh": "中部戰區空軍", "hq": "北京", "name_en": "Central Theater Air Force"}
+    ],
+    "overview": "亞洲最大、全球第三大空軍，DoD 2024 CMPR 指出戰機總數逾 1900 架 (不含無人機與教練機)。",
+    "sources": [
+      "U.S. DoD, CMPR 2024, pp. 64-72",
+      "中華民國國防部,《112年國防報告書》, 頁 47-49",
+      "CASI, 'In Their Own Words: PLA Air Force'"
+    ]
+  },
+  "equipment": [
+    {
+      "id": "plaaf-j20",
+      "name_zh": "殲-20 威龍",
+      "name_en": "Chengdu J-20 Mighty Dragon",
+      "category": "戰鬥機",
+      "subcategory": "第五代匿蹤空優",
+      "quantity": 250,
+      "introduced": 2017,
+      "specs": {
+        "最大速度_馬赫": 2.0,
+        "最大航程_公里": 5500,
+        "作戰半徑_公里": 2000,
+        "主要武器": "PL-15, PL-10",
+        "引擎": "WS-10C (量產中換裝 WS-15)",
+        "匿蹤": true
+      },
+      "deployment": [
+        {"base_zh": "蕪湖基地", "base_en": "Wuhu AB", "lat": 31.39, "lng": 118.41, "theater": "東部戰區"},
+        {"base_zh": "鞍山基地", "base_en": "Anshan AB", "lat": 41.10, "lng": 122.85, "theater": "北部戰區"},
+        {"base_zh": "鼎新試訓基地", "base_en": "Dingxin TTB", "lat": 40.53, "lng": 99.76, "theater": "西部戰區"}
+      ],
+      "sources": [
+        "IISS, The Military Balance 2024, p. 268",
+        "Janes All the World's Aircraft, J-20 entry",
+        "DoD CMPR 2024, p. 66",
+        "O'Brien & Erickson (2019), pp. 220-228",
+        "CASI 'PLAAF Doctrine'"
+      ]
+    },
+    {
+      "id": "plaaf-j16",
+      "name_zh": "殲-16 多用途戰鬥機",
+      "name_en": "Shenyang J-16",
+      "category": "戰鬥機",
+      "subcategory": "4.5 代多用途",
+      "quantity": 300,
+      "introduced": 2015,
+      "specs": {
+        "最大速度_馬赫": 2.0,
+        "作戰半徑_公里": 1500,
+        "外掛點": 12,
+        "主要武器": "PL-15, PL-10, YJ-83K, KD-88, KD-20 空射巡弋飛彈"
+      },
+      "deployment": [
+        {"base_zh": "蕪湖基地", "base_en": "Wuhu AB", "lat": 31.39, "lng": 118.41, "theater": "東部戰區"},
+        {"base_zh": "衢州基地", "base_en": "Quzhou AB", "lat": 28.97, "lng": 118.90, "theater": "東部戰區"}
+      ],
+      "sources": [
+        "IISS, The Military Balance 2024, p. 268",
+        "Janes All the World's Aircraft, J-16 entry",
+        "DoD CMPR 2024, p. 66"
+      ]
+    },
+    {
+      "id": "plaaf-j10c",
+      "name_zh": "殲-10C",
+      "name_en": "Chengdu J-10C",
+      "category": "戰鬥機",
+      "subcategory": "4.5 代單發",
+      "quantity": 280,
+      "introduced": 2018,
+      "specs": {
+        "最大速度_馬赫": 1.8,
+        "作戰半徑_公里": 1200,
+        "主要武器": "PL-15, PL-10, YJ-91 反輻射飛彈",
+        "雷達": "AESA 有源相位陣列雷達"
+      },
+      "deployment": [
+        {"base_zh": "武夷山基地", "base_en": "Wuyishan AB", "lat": 27.70, "lng": 118.00, "theater": "東部戰區"},
+        {"base_zh": "遂溪基地", "base_en": "Suixi AB", "lat": 21.36, "lng": 110.29, "theater": "南部戰區"}
+      ],
+      "sources": [
+        "IISS, The Military Balance 2024, p. 268",
+        "Janes All the World's Aircraft, J-10 entry",
+        "O'Brien & Erickson (2019), pp. 196-202",
+        "DoD CMPR 2024, p. 66"
+      ]
+    },
+    {
+      "id": "plaaf-su35",
+      "name_zh": "Su-35 側衛",
+      "name_en": "Sukhoi Su-35 Flanker-E",
+      "category": "戰鬥機",
+      "subcategory": "4.5 代重型",
+      "quantity": 24,
+      "introduced": 2016,
+      "specs": {
+        "最大速度_馬赫": 2.25,
+        "作戰半徑_公里": 1600,
+        "引擎": "2 × AL-41F1S 向量推力"
+      },
+      "deployment": [
+        {"base_zh": "遂溪基地", "base_en": "Suixi AB", "lat": 21.36, "lng": 110.29, "theater": "南部戰區"}
+      ],
+      "sources": [
+        "IISS, The Military Balance 2024, p. 268",
+        "Janes All the World's Aircraft, Su-35 entry",
+        "SIPRI Arms Transfers Database (Su-35 transfer to China)",
+        "DoD CMPR 2024, p. 66"
+      ]
+    },
+    {
+      "id": "plaaf-j11b",
+      "name_zh": "殲-11B 側衛",
+      "name_en": "Shenyang J-11B",
+      "category": "戰鬥機",
+      "subcategory": "4 代重型空優",
+      "quantity": 250,
+      "introduced": 2007,
+      "specs": {
+        "最大速度_馬赫": 2.3,
+        "作戰半徑_公里": 1500,
+        "主要武器": "PL-12, PL-8"
+      },
+      "deployment": [
+        {"base_zh": "各戰區普遍部署", "base_en": "All theaters", "lat": 34.0, "lng": 110.0, "theater": "全域"}
+      ],
+      "sources": [
+        "IISS, The Military Balance 2024, p. 268",
+        "Janes All the World's Aircraft, J-11B entry",
+        "SIPRI Arms Transfers Database (Su-27 transfer records)",
+        "DoD CMPR 2024, p. 66"
+      ]
+    },
+    {
+      "id": "plaaf-h6k",
+      "name_zh": "轟-6K 戰神",
+      "name_en": "Xian H-6K",
+      "category": "轟炸機",
+      "subcategory": "中程巡弋導彈載機",
+      "quantity": 100,
+      "introduced": 2009,
+      "specs": {
+        "最大速度_公里每小時": 1050,
+        "作戰半徑_公里": 3500,
+        "主要武器": "6-7 × CJ-10 / KD-20 長程空射巡弋飛彈"
+      },
+      "deployment": [
+        {"base_zh": "陝西武功 / 廣西桂林", "base_en": "Wugong / Guilin", "lat": 34.27, "lng": 108.22, "theater": "中、南部戰區"}
+      ],
+      "sources": [
+        "IISS, The Military Balance 2024, p. 268",
+        "Janes All the World's Aircraft, H-6K entry",
+        "Stokes & Easton (2009). China's Evolving Conventional Strategic Strike Capability. Project 2049 Institute",
+        "DoD CMPR 2024, p. 65"
+      ]
+    },
+    {
+      "id": "plaaf-h6n",
+      "name_zh": "轟-6N",
+      "name_en": "Xian H-6N",
+      "category": "轟炸機",
+      "subcategory": "空射彈道飛彈載機 (核打擊)",
+      "quantity": 20,
+      "introduced": 2020,
+      "specs": {
+        "最大速度_公里每小時": 1050,
+        "作戰半徑_公里": 6000,
+        "主要武器": "空射彈道飛彈 (CH-AS-X-13 推測)、CJ-100",
+        "特點": "具空中加油受油管，可攜掛高超音速武器"
+      },
+      "deployment": [
+        {"base_zh": "陝西武功 (中部戰區)", "base_en": "Wugong AB", "lat": 34.27, "lng": 108.22, "theater": "中部戰區"}
+      ],
+      "sources": [
+        "IISS, The Military Balance 2024, p. 268",
+        "Janes All the World's Aircraft, H-6N entry",
+        "Kristensen & Korda (2024), FAS Nuclear Notebook",
+        "DoD CMPR 2024, pp. 65, 91"
+      ]
+    },
+    {
+      "id": "plaaf-y20",
+      "name_zh": "運-20 鯤鵬",
+      "name_en": "Xian Y-20 Kunpeng",
+      "category": "運輸機",
+      "subcategory": "大型戰略運輸",
+      "quantity": 70,
+      "introduced": 2016,
+      "specs": {
+        "最大起飛重量_噸": 220,
+        "最大酬載_噸": 66,
+        "航程_公里": 7800,
+        "衍生型": "Y-20A 運輸、Y-20U 加油、KJ-3000 預警"
+      },
+      "deployment": [
+        {"base_zh": "成都邛崍基地", "base_en": "Qionglai, Chengdu", "lat": 30.42, "lng": 103.46, "theater": "西部戰區"}
+      ],
+      "sources": [
+        "IISS, The Military Balance 2024, p. 269",
+        "Janes All the World's Aircraft, Y-20 entry",
+        "DoD CMPR 2024, p. 67",
+        "Wuthnow et al. (2021). The PLA Beyond Borders, pp. 267-270"
+      ]
+    },
+    {
+      "id": "plaaf-y20u",
+      "name_zh": "運油-20",
+      "name_en": "Y-20U Tanker",
+      "category": "空中加油機",
+      "subcategory": "大型加油機",
+      "quantity": 10,
+      "introduced": 2022,
+      "specs": {
+        "最大起飛重量_噸": 220,
+        "輸油量_噸": 90,
+        "加油方式": "軟管 3 點式"
+      },
+      "deployment": [
+        {"base_zh": "成都邛崍", "base_en": "Qionglai AB", "lat": 30.42, "lng": 103.46, "theater": "西部戰區"}
+      ],
+      "sources": [
+        "IISS, The Military Balance 2024, p. 269",
+        "Janes All the World's Aircraft, Y-20U entry",
+        "DoD CMPR 2024, p. 67"
+      ]
+    },
+    {
+      "id": "plaaf-kj500",
+      "name_zh": "空警-500",
+      "name_en": "KJ-500 AEW&C",
+      "category": "空中預警機",
+      "subcategory": "AEW&C",
+      "quantity": 30,
+      "introduced": 2015,
+      "specs": {
+        "平台": "Y-9 運輸機",
+        "雷達": "三面固定式 AESA"
+      },
+      "deployment": [
+        {"base_zh": "杭州筧橋", "base_en": "Jianqiao AB, Hangzhou", "lat": 30.23, "lng": 120.18, "theater": "東部戰區"}
+      ],
+      "sources": [
+        "IISS, The Military Balance 2024, p. 269",
+        "Janes All the World's Aircraft, KJ-500 entry",
+        "DoD CMPR 2024, p. 67",
+        "CASI 'PLAAF ISR'"
+      ]
+    },
+    {
+      "id": "plaaf-gj11",
+      "name_zh": "攻擊-11 利劍",
+      "name_en": "Hongdu GJ-11 Sharp Sword",
+      "category": "無人機",
+      "subcategory": "匿蹤攻擊無人機",
+      "quantity": 0,
+      "introduced": 2022,
+      "specs": {
+        "類型": "飛翼匿蹤無人戰鬥機",
+        "作戰半徑_公里": 1200,
+        "酬載": "內置彈艙 2 噸級"
+      },
+      "deployment": [
+        {"base_zh": "試驗部隊 (具體不明)", "base_en": "Testing units", "lat": 40.53, "lng": 99.76, "theater": "西部戰區"}
+      ],
+      "sources": [
+        "DoD CMPR 2024, p. 68",
+        "IISS Strategic Survey 2024",
+        "Janes All the World's Aircraft, GJ-11 entry"
+      ]
+    },
+    {
+      "id": "plaaf-wz7",
+      "name_zh": "無偵-7 翔龍",
+      "name_en": "WZ-7 Soar Dragon",
+      "category": "無人機",
+      "subcategory": "高空長航時偵察無人機",
+      "quantity": 20,
+      "introduced": 2021,
+      "specs": {
+        "升限_公尺": 18000,
+        "續航_小時": 10,
+        "作用": "遠程偵察、目標指示"
+      },
+      "deployment": [
+        {"base_zh": "新疆民豐", "base_en": "Minfeng, Xinjiang", "lat": 37.07, "lng": 82.69, "theater": "西部戰區"},
+        {"base_zh": "黑龍江雙鴨山", "base_en": "Shuangyashan", "lat": 46.64, "lng": 131.15, "theater": "北部戰區"}
+      ],
+      "sources": [
+        "IISS, The Military Balance 2024, p. 269",
+        "Janes All the World's Aircraft, WZ-7 entry",
+        "DoD CMPR 2024, p. 68",
+        "CASI 'Emerging PLAAF UAS' 2023"
+      ]
+    },
+    {
+      "id": "plaaf-gj2",
+      "name_zh": "攻擊-2 翼龍 II",
+      "name_en": "Wing Loong II / GJ-2",
+      "category": "無人機",
+      "subcategory": "中空長航時察打一體",
+      "quantity": 60,
+      "introduced": 2018,
+      "specs": {
+        "續航_小時": 20,
+        "酬載_公斤": 480,
+        "武器": "AR-1 反戰車飛彈、BA-7 空對地、FT-7/10 小型炸彈"
+      },
+      "deployment": [
+        {"base_zh": "成都 / 西部訓練場", "base_en": "Chengdu / Western TTB", "lat": 30.67, "lng": 104.07, "theater": "西部戰區"}
+      ],
+      "sources": [
+        "IISS, The Military Balance 2024, p. 270",
+        "Janes All the World's Aircraft, Wing Loong II entry",
+        "SIPRI Arms Transfers Database (Wing Loong II exports)",
+        "DoD CMPR 2024, p. 68"
+      ]
+    }
+  ]
+}

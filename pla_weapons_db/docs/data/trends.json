@@ -1,0 +1,127 @@
+{
+  "metadata": {
+    "title": "共軍兵力成長趨勢（DoD 官方公開預測）",
+    "note": "預測值均源自美國國防部歷年《中國軍力報告》(CMPR) 之公開推估，屬「中程估計 (mid-range estimate)」。CMPR 預測範圍含不確定性，具體請參閱原始報告。",
+    "sources": [
+      "DoD CMPR 2020 (Oct 2020)",
+      "DoD CMPR 2021 (Nov 2021)",
+      "DoD CMPR 2022 (Nov 2022)",
+      "DoD CMPR 2023 (Oct 2023)",
+      "DoD CMPR 2024 (Dec 2024)",
+      "Kristensen & Korda (2024), FAS Nuclear Notebook",
+      "CSIS China Power Project"
+    ]
+  },
+  "metrics": [
+    {
+      "id": "warheads",
+      "title_zh": "中國核彈頭庫存量",
+      "title_en": "China Operational Nuclear Warheads",
+      "unit": "枚",
+      "color": "#e53935",
+      "series": [
+        {"year": 2020, "value": 250, "type": "實測", "source": "CMPR 2020, p. 85"},
+        {"year": 2021, "value": 350, "type": "實測", "source": "CMPR 2021, p. 90"},
+        {"year": 2022, "value": 410, "type": "實測", "source": "CMPR 2022, p. 94"},
+        {"year": 2023, "value": 500, "type": "實測", "source": "CMPR 2023, p. 109"},
+        {"year": 2024, "value": 600, "type": "實測", "source": "CMPR 2024, p. 95"},
+        {"year": 2030, "value": 1000, "type": "預測", "source": "CMPR 2024, p. 95"},
+        {"year": 2035, "value": 1500, "type": "預測", "source": "CMPR 2024, p. 95"}
+      ]
+    },
+    {
+      "id": "plan_battle_force",
+      "title_zh": "中共海軍戰鬥艦艇總數",
+      "title_en": "PLAN Battle Force Ships",
+      "unit": "艘",
+      "color": "#1976d2",
+      "series": [
+        {"year": 2020, "value": 355, "type": "實測", "source": "CMPR 2020, p. 45"},
+        {"year": 2022, "value": 340, "type": "實測", "source": "CMPR 2022, p. 51"},
+        {"year": 2024, "value": 370, "type": "實測", "source": "CMPR 2024, p. 53"},
+        {"year": 2025, "value": 395, "type": "預測", "source": "CMPR 2024, p. 53"},
+        {"year": 2030, "value": 435, "type": "預測", "source": "CMPR 2024, p. 53"}
+      ]
+    },
+    {
+      "id": "carriers",
+      "title_zh": "中共航空母艦",
+      "title_en": "PLAN Aircraft Carriers",
+      "unit": "艘",
+      "color": "#0288d1",
+      "series": [
+        {"year": 2012, "value": 1, "type": "實測", "note": "遼寧艦服役"},
+        {"year": 2019, "value": 2, "type": "實測", "note": "山東艦服役"},
+        {"year": 2024, "value": 3, "type": "實測", "note": "福建艦交艦，海試中"},
+        {"year": 2030, "value": 4, "type": "預測", "source": "CMPR 2024, p. 55"},
+        {"year": 2035, "value": 6, "type": "預測", "source": "CMPR 2024, p. 55"}
+      ]
+    },
+    {
+      "id": "icbm_launchers",
+      "title_zh": "洲際彈道飛彈發射架",
+      "title_en": "PLARF ICBM Launchers",
+      "unit": "架",
+      "color": "#f57c00",
+      "series": [
+        {"year": 2020, "value": 100, "type": "實測", "source": "CMPR 2020, p. 56"},
+        {"year": 2022, "value": 300, "type": "實測", "source": "CMPR 2022, p. 89"},
+        {"year": 2024, "value": 400, "type": "實測", "source": "CMPR 2024, p. 82"},
+        {"year": 2030, "value": 700, "type": "預測", "source": "CMPR 2024, p. 85", "note": "含 DF-5C、DF-41 新增三個發射井群"}
+      ]
+    },
+    {
+      "id": "j20",
+      "title_zh": "殲-20 第五代戰機",
+      "title_en": "J-20 Stealth Fighter",
+      "unit": "架",
+      "color": "#7b1fa2",
+      "series": [
+        {"year": 2020, "value": 50, "type": "實測", "source": "CMPR 2020, p. 61"},
+        {"year": 2022, "value": 120, "type": "實測", "source": "CMPR 2022, p. 75"},
+        {"year": 2024, "value": 250, "type": "實測", "source": "CMPR 2024, p. 66"},
+        {"year": 2027, "value": 500, "type": "預測", "source": "CASI 'J-20 Programme' 2024"}
+      ]
+    },
+    {
+      "id": "type055",
+      "title_zh": "055 型驅逐艦",
+      "title_en": "Type 055 Renhai-class DDG",
+      "unit": "艘",
+      "color": "#00838f",
+      "series": [
+        {"year": 2020, "value": 2, "type": "實測"},
+        {"year": 2022, "value": 6, "type": "實測"},
+        {"year": 2024, "value": 8, "type": "實測", "source": "CMPR 2024, p. 56"},
+        {"year": 2027, "value": 12, "type": "預測", "source": "CMPR 2024, p. 56"},
+        {"year": 2030, "value": 16, "type": "預測", "source": "CMPR 2024, p. 56"}
+      ]
+    },
+    {
+      "id": "type075",
+      "title_zh": "075 型兩棲突擊艦",
+      "title_en": "Type 075 Yushen-class LHD",
+      "unit": "艘",
+      "color": "#2e7d32",
+      "series": [
+        {"year": 2021, "value": 1, "type": "實測"},
+        {"year": 2022, "value": 2, "type": "實測"},
+        {"year": 2024, "value": 3, "type": "實測", "source": "CMPR 2024, p. 57"},
+        {"year": 2027, "value": 6, "type": "預測", "source": "CMPR 2024, p. 57"}
+      ]
+    },
+    {
+      "id": "ssbn",
+      "title_zh": "戰略核潛艦 (SSBN)",
+      "title_en": "Strategic Ballistic Missile Submarines",
+      "unit": "艘",
+      "color": "#5d4037",
+      "series": [
+        {"year": 2020, "value": 4, "type": "實測"},
+        {"year": 2022, "value": 6, "type": "實測"},
+        {"year": 2024, "value": 6, "type": "實測", "source": "CMPR 2024, p. 92"},
+        {"year": 2030, "value": 8, "type": "預測", "source": "CMPR 2024, p. 92", "note": "094A 續建 + 096 新一代 SSBN"}
+      ]
+    }
+  ]
+}

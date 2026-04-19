@@ -1,0 +1,37 @@
+{
+  "metadata": {
+    "title_zh": "軍事基地資料庫",
+    "title_en": "Military Installations Database",
+    "total_bases": 146,
+    "data_cutoff": "2024",
+    "sources_summary": "DoD CMPR 2024, IISS Military Balance 2024, FAS Nuclear Notebook, CSIS AMTI/Missile Threat, Janes, ONI, 《112年國防報告書》, JASDF/JMSDF/JGSDF, ROK MND, RAAF, AFP"
+  },
+  "files": [
+    {"id":"prc","file":"data/bases-prc-army.json","label_zh":"🇨🇳 PLA 陸軍 / 戰區 / CMC","count":20},
+    {"id":"prc-navy-air","file":"data/bases-prc-navy-air.json","label_zh":"🇨🇳 PLA 海軍 / 空軍","count":34},
+    {"id":"prc-rocket","file":"data/bases-prc-rocket-isf.json","label_zh":"🇨🇳 PLA 火箭軍 / 資訊支援","count":24},
+    {"id":"roc","file":"data/bases-roc.json","label_zh":"🇹🇼 中華民國國軍","count":30},
+    {"id":"us","file":"data/bases-us.json","label_zh":"🇺🇸 美軍印太","count":20},
+    {"id":"allies","file":"data/bases-allies.json","label_zh":"🇯🇵🇰🇷🇦🇺🇵🇭 盟軍","count":22}
+  ],
+  "type_labels": {
+    "national_hq": "國家/軍委 HQ",
+    "theater_hq": "戰區 HQ",
+    "service_hq": "軍種 HQ",
+    "fleet_hq": "艦隊 HQ",
+    "army_garrison": "陸軍駐地",
+    "naval_base": "海軍基地",
+    "submarine_base": "潛艦基地",
+    "air_base": "空軍基地",
+    "missile_base": "導彈基地",
+    "missile_brigade": "導彈旅",
+    "missile_silo": "導彈發射井",
+    "missile_hq": "飛彈指揮部",
+    "island_garrison": "島嶼駐地",
+    "joint_base": "聯合基地",
+    "marine_base": "海陸基地",
+    "radar_station": "雷達站",
+    "sigint_base": "信號情報站",
+    "test_facility": "試驗場"
+  }
+}
